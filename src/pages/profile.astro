@@ -2,6 +2,7 @@
 import Layout from "~/layouts/Layout.astro"
 import TimeLine from "~/components/TimeLine/index.astro"
 import Skills from "~/components/Skills.astro";
+import Testimonials from "~/components/Testimonials/index.astro";
 import SubHeading from "~/components/common/SubHeading.astro";
 import {Config} from "~/config"
 
@@ -71,6 +72,9 @@ if (currentDate.getMonth() < careerStartDate.getMonth() || (currentDate.getMonth
     </section>
     <section class="py-8">
       <Skills/>
+    </section>
+    <section class="py-8">
+      <Testimonials/>
     </section>
     <section class="py-8">
       <SubHeading text="My Leisurely Pastimes" />

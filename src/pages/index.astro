@@ -4,6 +4,7 @@ import About from "~/components/HeroAboutText/index.astro"
 import FeaturedProjects from "~/components/FeaturedProjects/index.astro"
 import BlogRow from "~/components/common/BlogRow.astro";
 import Skills from "~/components/Skills.astro";
+import Testimonials from  "~/components/Testimonials/index.astro";
 import SubHeading from "~/components/common/SubHeading.astro";
 
 
@@ -52,6 +53,9 @@ const blogs = (await getCollection("posts")).sort(function (
       </article>
       <section class="py-6">
         <Skills/>
+      </section>
+      <section class="py-6">
+        <Testimonials/>
       </section>
     </div>
   </main>

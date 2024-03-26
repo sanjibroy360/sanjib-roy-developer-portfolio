@@ -1,4 +1,5 @@
 import icon from "~/assets/Images/avatar.webp";
+import avatarSamkit from "~/assets/Images/testimonials/avatar-samkit-jain.webp";
 
 interface IConfig {
   me: {
@@ -23,6 +24,7 @@ interface IConfig {
     [name: string]: string;
   };
   projects: ProjectObj[];
+  testimonials: TestimonialsObj[];
   og: {
     image: string;
   };
@@ -60,6 +62,14 @@ interface SkillObj {
   title: string;
   icon?: string;
   svg?: string;
+}
+
+interface TestimonialsObj {
+  avatar: any;
+  role: string;
+  name: string;
+  message: string;
+  link: string;
 }
 
 const AboutMe: string[] = [
@@ -237,6 +247,18 @@ const Skills: SkillObj[] = [
     icon: "github-original bg-white font-normal rounded-full",
   },
 ];
+
+const Testimonials: TestimonialsObj[] = [
+  {
+    avatar: avatarSamkit.src,
+    role: "Principal Engineer at Juvoxa",
+    name: "Samkit Jain",
+    message:
+      "Sanjib showed tremendous growth during his tenure at Juvoxa. He is a quick learner and knows JavaScript very well. Able to convert Figma designs into reusable components to the T and regularly employed code optimisation techniques. Apart from the technical requirements, he also showcased managerial qualities by leading sprints for new product features.",
+    link: "https://www.linkedin.com/in/sanjibroy360/details/recommendations",
+  },
+];
+
 export const Config: IConfig = {
   me: {
     avatar: "/src/assets/Images/avatar.webp",
@@ -337,6 +359,7 @@ export const Config: IConfig = {
       tags: ["JavaScript"],
     },
   ],
+  testimonials: Testimonials,
   og: {
     image: icon.src,
   },

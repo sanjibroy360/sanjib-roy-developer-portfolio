@@ -1,0 +1,33 @@
+---
+import {Config} from "~/config.ts";
+import TestimonialCard from "~/components/common/TestimonialCard.astro";
+import SubHeading from "~/components/common/SubHeading.astro";
+---
+
+<section class="block">
+  <div class="flex flex-col gap-8">
+    <SubHeading text="Testimonials" />
+    <ul class="grid md:grid-cols-1 grid-cols-1 gap-4 sm:grid-cols-2 justify-center items-stretch">
+      {Config.testimonials?.map((testimonial) => (
+        <TestimonialCard
+          role={testimonial.role || ""}
+          name={testimonial.name}
+          message={testimonial.message}
+          avatar={testimonial.avatar}
+          link={testimonial.link}
+        />
+      ))}
+    </ul>
+
+    <em class="text-[10px] md:text-sm s8:text-[8.5px] bg-neutral/70 text-secondary p-1 s8:p-1 font-medium inline w-full rounded-md">
+      <span class="text-accent/75 text-base s8:text-[10px] not-italic pr-[1px]">*</span>Also endorsed by a lot of colleagues on 
+      <a 
+        href={Config.socials.LinkedIn} 
+        target="_blank" 
+        rel="noopener noreferrer nofollow" 
+        class="inline hover:text-highlighted-btn-txt">
+          <strong class="underline">LinkedIn</strong></a> 
+        for various technical skills.
+    </em>
+  </div>
+</section>

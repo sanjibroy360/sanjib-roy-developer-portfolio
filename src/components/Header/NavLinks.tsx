@@ -39,7 +39,7 @@ function NavLinks({ currentPath, ctrlNavPaneStateClassName }: Iprops) {
                 <span>{page.title}</span>
               )}
               {page?.external && (
-                <span className="ml-1 text-gray-400 dark:text-gray-600">
+                <span className="ml-1 text-highlighted hover:text-highlighted-btn-txt">
                   <ArrowSquareOut size={14} />
                 </span>
               )}

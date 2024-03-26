@@ -1,0 +1,59 @@
+---
+interface Props {
+  avatar:any;
+  role: string;
+  name: string;
+  message: string;
+  link: string;
+}
+import { Image } from 'astro:assets';
+const { avatar, name, message, link, role } = Astro.props
+
+---
+
+<a
+  href={link}
+  target={"_blank"}
+  rel="noopener noreferrer nofollow"
+  area-label="Testimonial"
+  class="group flex flex-col md:justify-center cursor-pointer gap-4 rounded-md border p-4 transition-all duration-300 hover:-translate-y-1.5 shadow-card-box-shadow border-light-border h-full w-full"
+  data-astro-prefetch
+>
+  <div class="flex flex-row w-full justify-between gap-3 items-start">
+    <div class="flex items-center gap-x-3">
+      <img
+        height="48"
+        width="48"
+        class="h-12 w-12 object-cover bg-orange-100 rounded-full block"
+        src={avatar}
+        alt={`${name}'s photo | Testimonial`}
+        loading="lazy"
+        decoding="async"
+      />
+      <div>
+        <h3 class="text-sm md:text-base text-primary font-medium">{name}</h3>
+        <p class="text-xs md:text-sm text-list-date">{role}</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#94a0a9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        color="#94a0a9"
+        class="tabler-icon tabler-icon-arrow-up-right transition-none md:transition-all md:duration-300 md:group-hover:translate-x-1"
+      >
+        <path d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path>
+      </svg>
+    </div>
+  </div>
+
+  <em class="text-secondary/95 font-medium leading-normal italic block text-sm">
+    " {message?.trim()} "
+  </em>
+</a>
