@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  publishedOn: Date;
+  description?: string;
+  href: string;
+  tags?: string[];
+}
+
+const { title, publishedOn, href } = Astro.props;
+---
+
+<div class="last:!border-b-0">
+  <div>
+    <a href={href} class="block w-full" area-label={title}>
+      <article class="lg:flex justify-between items-center border-dashed font-medium w-full py-3 md:py-[8px] dark:text-white border-b border-list-border hover:border-list-border-hover md:flex-row">
+        <h3 class="block font-normal text-list-title basis-3/4 ellipsis">{title}</h2>
+        <p class="block pt-1 md:pt-0 md:pl-2 md:ml-auto font-normal text-list-date">
+          {new Date(publishedOn).toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+        </p>
+      </article>
+    </a>
+  </div>
+</div>
+     

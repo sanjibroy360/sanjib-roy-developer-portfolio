@@ -1,0 +1,58 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import About from "~/components/HeroAboutText/index.astro"
+import FeaturedProjects from "~/components/FeaturedProjects/index.astro"
+import BlogRow from "~/components/common/BlogRow.astro";
+import Skills from "~/components/Skills.astro";
+import SubHeading from "~/components/common/SubHeading.astro";
+
+
+import { getCollection } from "astro:content";
+const blogs = (await getCollection("posts")).sort(function (
+  first: any,
+  second: any
+) {
+  return second.data.publishedOn.getTime() - first.data.publishedOn.getTime();
+});
+---
+
+<Layout>
+  <main class="lg:my-32 my-11">
+    <div class="flex flex-col gap-6 lg:pt-0 md:py-5 divide-y divide-section-divider">
+      <About />
+      <FeaturedProjects />
+
+      <article class="flex flex-col gap-8 pt-6">
+        <header class="flex w-full flex-row justify-between gap-2">
+          <SubHeading text="Blog" />
+          <a
+            href="/blogs"
+            class="text-sm text-secondary underline decoration-dashed underline-offset-8"
+            rel="noopener noreferrer nofollow"
+            >View all blog posts →
+          </a>
+        </header>
+        <div
+        <section class="w-full text-sm lg:flex flex-col pb-10">
+          {
+            blogs.map((post: any) => (
+              <BlogRow
+                title={post.data.title}
+                publishedOn={post.data.publishedOn.toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+                description={post.data.description}
+                href={"/blogs/" + post.slug}
+              />
+            ))
+          }
+        </section>
+      </article>
+      <section class="py-6">
+        <Skills/>
+      </section>
+    </div>
+  </main>
+</Layout>

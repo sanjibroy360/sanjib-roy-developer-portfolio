@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+  publishedOn?: Date;
+  about?: string;
+  description?: string;
+  href: string;
+  tags?: string[];
+  showTags?:boolean;
+  classNames?: string;
+  sourcePage?:string;
+}
+
+const { title, publishedOn,about, description, href, tags, showTags, classNames, sourcePage } = Astro.props;
+---
+
+<a
+  href={href}
+  target={href.startsWith("http") ? "_blank" : "_self"}
+  rel="noopener noreferrer nofollow"
+  area-label={title}
+  class="group flex md:justify-center  cursor-pointer flex-col gap-2 rounded-md border p-4 transition-all duration-300 hover:-translate-y-1.5 shadow-card-box-shadow border-light-border h-full"
+  data-astro-prefetch
+>
+  <div class="flex w-full justify-between gap-3 flex-row items-start">
+    <h3 class="text-primary font-medium">{title}</h3>
+    <div class="flex flex-row items-center gap-2">
+      {
+        publishedOn ? (
+          <p class="text-primary whitespace-nowrap">
+            {new Date(publishedOn).toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </p>
+        ) : null
+      }
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#94a0a9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        color="#94a0a9"
+        class="tabler-icon tabler-icon-arrow-up-right transition-none md:transition-all md:duration-300 md:group-hover:translate-x-1"
+      >
+        <path d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path>
+      </svg>
+      
+    </div>
+  </div>
+  <p class={`text-secondary text-sm ${sourcePage?.toLowerCase()?.trim() == "projects" ? "s8:text-sm" :"s8:text-xs"} justify-self-start`}>{about}</p>
+  <div class="mt-auto">
+    {
+      tags && showTags ? (
+        <div class={"pt-1 flex flex-row flex-wrap gap-x-2 gap-y-2"}>
+          {tags?.map((item) => (
+            <p class={`badge badge-neutral font-bold rounded p-[3px] border-light-border shadow-card-box-shadow text-secondary text-center ${classNames? classNames :'text-xs'}`}>{item}</p>
+          ))}
+        </div>
+      ) : (
+        <div class={"pt-1 hidden md:flex flex-row flex-wrap gap-2"}>
+          {tags?.map((item) => (
+            <p class="badge badge-neutral font-bold text-[11px] rounded p-[3px] border-light-border shadow-card-box-shadow text-secondary text-center text-xs">{item}</p>
+          ))}
+        </div>
+      )}
+      {description && <p class="truncate">{description}</p>}
+    
+  </div>
+</a>

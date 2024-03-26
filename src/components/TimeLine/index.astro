@@ -1,0 +1,34 @@
+---
+interface Props {
+  type:string;
+  title: string;
+  institute?: string;
+  company?: string;
+  years?:string;
+  address?:string;
+  contributions?: string[];
+}
+
+import EducationTimeLine from "./EducationTimeLine.astro";
+import WorkExperienceTimeLine from "./WorkExperienceTimeLine.astro";
+
+const { title, institute, company, type, years, contributions, address}:Props = Astro.props;
+---
+
+{type === "education" && (
+  <EducationTimeLine 
+    title={title} 
+    address={address}
+    institute={institute || ""} 
+    years={years}/>
+)}
+
+{type === "work" && (
+  <WorkExperienceTimeLine 
+    title={title} 
+    company={company || ""} 
+    years={years}
+    contributions={contributions}/>
+)}
+
+

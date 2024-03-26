@@ -1,0 +1,20 @@
+---
+import {Config} from "~/config.ts";
+import StackCard from "~/components/common/StackCard.astro";
+import SubHeading from "~/components/common/SubHeading.astro";
+---
+
+<section class="block">
+  <div class="flex flex-col pb-6 gap-8">
+    <SubHeading text="Skills" />
+    <ul class="mt-4 list-none nowrap grid grid-cols-2 md:grid-cols-3 time-line-container h-full mb-10 grid gap-4">
+      {Config.about.skills?.map(skill => (
+        <StackCard 
+          text={skill.title}
+          icon={skill.icon || ""}
+          svg={skill.svg || ""}
+        />
+      ))}
+    </ul>
+  </div>
+</section>

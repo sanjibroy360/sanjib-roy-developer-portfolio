@@ -1,0 +1,81 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import TimeLine from "~/components/TimeLine/index.astro"
+import Skills from "~/components/Skills.astro";
+import SubHeading from "~/components/common/SubHeading.astro";
+import {Config} from "~/config"
+
+// Calculate year of experience
+const { Date } = globalThis;
+const careerStartDate = new Date(Config.me.started)
+const currentDate = new Date();
+
+// Calculate the difference in years
+let yearsOfExperience = currentDate.getFullYear() - careerStartDate.getFullYear();
+
+// Check if the current month is before the starting month or if the current month is the same but the day is before the starting day
+if (currentDate.getMonth() < careerStartDate.getMonth() || (currentDate.getMonth() === careerStartDate.getMonth() && currentDate.getDate() < careerStartDate.getDate())) {
+  // Subtract one year if the current date is before the starting date in the same year
+  yearsOfExperience -= 1;
+}
+
+---
+
+<Layout>
+  <main class="lg:my-32 my-11 mb-20 divide-y divide-section-divider">
+    <section class="pb-8">
+      <h1 class="capitalize font-medium text-3xl mb-8 md:mb-14 mt-4" role="heading">
+        Profile
+      </h1>
+      <em class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal">
+        Hi, I am Sanjib Roy, a Software Developer with over {yearsOfExperience} {yearsOfExperience > 1 ? "years": "year"} of remote work experience, proficient in <strong> JavaScript</strong>,<strong> React.js</strong>,<strong> Next.js</strong>,<strong> Node.js</strong>,<strong> TypeScript</strong>,<strong> Electron.js</strong>,<strong> MongoDB</strong>, <strong> Ruby</strong>,<strong> Ruby on Rails</strong>, and <strong> PostgreSQL</strong>. I completed my <strong area-label="Bachelor of Science in Computer Science (Honours)" title="Bachelor of Science in Computer Science (Honours)" class="font-normal">B.Sc in Computer Science (Hons.)</strong> in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.
+      </em>
+      <div class="mt-4 w-11/12 flex items-center gap-x-2">
+        <a
+          href={Config.me.resumeLink}
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          <button class="inline-block basis-2/5 md:basis-[25%] px-2 py-2.5 !font-inter font-bold text-xs bg-blue-btn text-white capitalize rounded-full md:rounded-md">Download Resume</button>    
+        </a>     
+      </div>
+    </section>
+    <section class="px-0 flex flex-col gap-8 py-8">
+      <SubHeading text="Experience"/>
+      <ul class="block list-none time-line-container h-full grid gap-4">
+        {Config.about.workExperiences.map((workExp) => (
+          <TimeLine 
+            type="work"
+            title={workExp.title}
+            years={workExp.years}
+            company={workExp.company}
+            contributions= {workExp.contributions}
+          />
+        ))}
+      </ul>
+    </section>
+    <section class="flex flex-col gap-8 py-8">
+      <SubHeading text="Education" />
+      <ul class="block list-none time-line-container h-full grid gap-4">
+        {Config.about.educationDetails?.map(education => (
+          <TimeLine 
+            type="education"
+            title={education.title}
+            years={education.years}
+            institute={education.institute}
+            address={education.address}
+          />
+        ))}
+      </ul>
+    </section>
+    <section class="py-8">
+      <Skills/>
+    </section>
+    <section class="py-8">
+      <SubHeading text="My Leisurely Pastimes" />
+      <em class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal pt-8">
+        When I'm not coding, you will find me chilling with some awesome Bengali movies directed by renowned Bengali directors like Ritwik Ghatak, Satyajit Ray, Kaushik Ganguly, Rituparno Ghosh, etc. Or I'll be capturing moments on my phone and being a huge foodie, always on the lookout for new spots to eat and trying them out! For me, it's all about the tasty adventures, creating lasting memories, spreading positive vibes wherever I go and leaving a positive impact on the world.
+      </em>
+    </section>
+  </main>
+</Layout>

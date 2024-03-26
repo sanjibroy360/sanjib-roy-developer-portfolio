@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  company: string;
+  years?:string;
+  contributions?:string[];
+}
+
+const { title, contributions, company, years} = Astro.props;
+---
+
+<li class="flex">
+  <div class="timeline-block">
+    <div class="mt-1 p-2 flex justify-center rounded-full bg-green-1000 relative z-10">
+        <svg class="block" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" viewBox="0 0 256 256"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg>
+    </div>
+    <span class="bar block h-full w-[2px] translate-x-[17px] bg-green-1000/80"></span>
+  </div>
+  <div class="timeline-desc bd-grid px-5 pb-5 mt-auto">
+    <h3 class="mb-1 text-base md:text-lg font-semibold pt-2">{title}</h3>
+    <h4 class="text-sm md:text-base font-normal text-primary/80">{company}</h4>
+    <p class="text-xs my-2 font-light md:text-sm text-justify text-primary/90">{years}</p>
+
+    <ul class="list-disc md:ml-3">
+      {contributions?.map(contribution => (
+          <li class="m-0 font-normal leading-normal py-2 text-base text-secondary">
+            <p> {contribution} </p>
+          </li>
+        ))
+      }
+    <ul>
+  </div>
+</li>

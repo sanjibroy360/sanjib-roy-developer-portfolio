@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+const { post } = Astro.props;
+const formattedPublishedAtDate = new Date(post.data.publishedOn).toLocaleDateString(
+  "en-us",
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+);           
+const { Content } = await post.render();
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.summary}
+  keywords={post.data.keywords}
+  og_title={post.data.title}
+  og_description={post.data.summary}
+  og_type="article"
+>
+  <main class="lg:my-32 my-11">
+    <article class="pt-8 pb-14 md:px-2 md:pt-6 min-h-screen blog-wrapper prose lg:m-0 mx-auto flex w-full lg:max-w-full max-w-prose flex-col">
+      <h1 class="mb-0 text-3xl md:text-4xl max-w-[620px]" area-label={`Title of the blog is "${post.data.title}"`} role="heading">
+        {post.data.title}
+      </h1>
+      <p class="mt-8 mb-0 p-0 text-sm mb-1 tracking-wide">
+        Author: <a class="no-underline font-medium" href='/' rel="noopener noreferrer nofollow" area-label={`Author name is ${post.data.author}`} role="contentinfo">{post.data.author}</span>
+      </p>
+      <p class="mt-0 mb-2 p-0 text-sm">
+        Published on: <span class="font-medium" area-label={`This article was published on ${formattedPublishedAtDate}`} role="contentinfo">{formattedPublishedAtDate}</span>
+      </p>
+      <div class="m-0"></div>
+      <div class="blog-content">
+        <Content />
+      </div>
+    </article>
+   </main>
+</Layout>

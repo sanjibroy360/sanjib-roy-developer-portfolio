@@ -1,0 +1,133 @@
+---
+import avatarImage from "~/assets/Images/avatar.webp";
+import "./styles.css";
+import {Config} from "~/config"
+
+// Calculate year of experience
+const { Date } = globalThis;
+const careerStartDate = new Date(Config.me.started)
+const currentDate = new Date();
+
+// Calculate the difference in years
+let yearsOfExperience = currentDate.getFullYear() - careerStartDate.getFullYear();
+
+// Check if the current month is before the starting month or if the current month is the same but the day is before the starting day
+if (currentDate.getMonth() < careerStartDate.getMonth() || (currentDate.getMonth() === careerStartDate.getMonth() && currentDate.getDate() < careerStartDate.getDate())) {
+  // Subtract one year if the current date is before the starting date in the same year
+  yearsOfExperience -= 1;
+}
+---
+
+<article>
+  <div class="block items-center md:hidden my-4 ml-1">
+    <img
+      height="96px"
+      width="96px"
+      class="object-contain bg-orange-100 rounded-full"
+      src={avatarImage.src}
+      alt="Avatar image"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+  <div class="flex flex-col md:flex-row items-center justify-between gap-6 lg:gap-8">
+    <div class="basis-2/3">
+      <h2 class="text-secondary mb-5 md:text-3xl text-2xl">
+        <span class="opacity-70 p-0 m-0 font-normal text-blurry-text">
+          Hi <span class="wave">👋</span>, I'm
+        </span>
+        <span class="font-bold text-primary">Sanjib Roy!</span>
+      </h2>
+      <div>
+        <ul class="!mb-0 text-primary-light font-thin list-disc pl-4 space-y-1 md:space-y-[6px]">
+          <li>
+            <p>
+              Software engineer, with {yearsOfExperience} {yearsOfExperience > 1 ? 'years' : 'year'} of industry experience.
+            </p>
+          </li>
+          <li>
+            <p>
+              Skilled in JavaScript, React.js, Node.js, MongoDB, Ruby on Rails, and more.
+            </p>
+          </li>
+          <li>
+            <p>
+              Proficient in asynchronous communication for seamless collaboration in remote teams.
+            </p>
+          </li>
+          <li>
+            <p>
+                Working with{" "}
+                <a
+                  class="border-b text-primary border-gray-300 hover:text-accent"
+                  href="https://www.saeloun.com/"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                >
+                  Saeloun
+                </a>, previously at{" "}
+                <a
+                  class="border-b text-primary border-gray-300 hover:text-accent"
+                  href="https://www.linkedin.com/company/juvoxa/"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                >
+                  Juvoxa
+                </a>,
+                <a
+                  class="border-b text-primary border-gray-300 hover:text-accent"
+                  href="https://bigbinary.com"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                >
+                  BigBinary
+                </a>
+            </p>
+          </li>
+
+          <li>
+            <p>Kinda active on Twitter{" "}
+              <a
+                class="border-b text-primary border-gray-300 hover:text-accent"
+                href="https://twitter.com/sanjibroy360"
+                rel="noopener noreferrer nofollow"
+                target="_blank"
+              >
+                @sanjibroy360
+              </a> 
+            </p>
+          </li>
+        </ul>
+        <div class="md:mt-4 mt-6 flex justify-center md:justify-start items-center gap-x-2">
+          <a
+            href={Config.me.resumeLink}
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            class="md:hidden inline-block md:basis-1/3 basis-1/2 p-2 font-bold text-sm bg-blue-btn opacity-90 hover:opacity-100 text-white capitalize rounded-full md:rounded-lg text-center"
+          >
+            <button>Download Resume</button>
+          </a>
+          <a
+            href='/profile'
+            rel="noopener noreferrer nofollow"
+            class="md:hidden inline-block basis-1/2 p-2 !font-inter font-bold text-sm bg-app text-blue-btn border-2 border-blue-btn capitalize rounded-full text-center"
+          >
+            <button>View Profile</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:block hidden">
+      <img
+        height="192px"
+        width="192px"
+        class="h-48 w-48 object-cover bg-orange-100 rounded-full"
+        src={avatarImage.src}
+        alt="Avatar image"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </div>
+</article>

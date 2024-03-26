@@ -1,0 +1,44 @@
+---
+import { Config } from "~/config";
+import FloatingBox from "../common/SmallBox.astro";
+import SubHeading from "~/components/common/SubHeading.astro";
+---
+<article class="flex flex-col gap-8 pt-6">
+  <header class="flex w-full flex-row justify-between gap-2">
+    <SubHeading text="Projects" />
+    <a
+      href={Config.me.projectLink}
+      class="text-sm text-secondary underline decoration-dashed underline-offset-8"
+      target="_self"
+      rel="noopener noreferrer nofollow"
+      >          
+      View all projects →
+    </a>
+  </header>
+  <section class="grid md:grid-cols-3 grid-cols-2 gap-4 sm:grid-cols-2 justify-center items-stretch">
+    {Config.projects?.slice(0, 6).map((project) => (
+      <div class="hidden md:block">
+        <FloatingBox
+          title={project.appName}
+          about={project.about}
+          href={project.url}
+          tags={project.tags}
+          showTags={false}
+          classNames={"text-[10px]"}
+        />
+      </div>
+    ))}
+    {Config.projects?.slice(0, 4).map((project) => (
+      <div class="block md:hidden min-h-[178px]">
+        <FloatingBox
+          title={project.appName}
+          about={project.about}
+          href={project.url}
+          tags={project.tags}
+          showTags={true}
+          classNames={" text-[10.5px] s8:text-[8.15px]"}
+        />
+      </div>
+    ))}
+  </section>
+</article>

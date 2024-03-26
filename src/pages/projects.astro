@@ -1,0 +1,24 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import FloatingBox from "~/components/common/SmallBox.astro";
+import {Config} from "~/config.ts"
+---
+
+<Layout>
+  <main class="lg:my-32 my-11">
+     <h1 class="font-medium text-3xl mb-8 md:mb-14 mt-4">Projects<h1>
+    <section class="grid md:grid-cols-2 grid-cols-1 gap-4 sm:grid-cols-2 justify-center items-stretch">
+      {Config.projects?.map((project) => (
+        <FloatingBox
+          sourcePage="projects"
+          title={project.appName}
+          about={project.about}
+          href={project.url}
+          tags={project.tags}
+          showTags={true}
+          classNames={""}
+        />
+      ))}
+    </section>
+  </main>
+</Layout>

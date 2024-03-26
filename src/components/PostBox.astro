@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  publishedOn: Date;
+  summary?: string;
+  href: string;
+  tags?: string[];
+}
+
+const { title, publishedOn, summary, href } = Astro.props;
+---
+
+<article class="last:!border-b-0 mb-8 blog-card">
+  <a href={`/blogs/${href}`} class="block w-full" area-label={title}>
+    <div class="flex flex-col gap-4 border-dashed font-medium w-full py-3 md:py-[8px] dark:text-white border-b border-gray-200 hover:border-gray-400 dark:border-gray-700 dark:hover:border-primary/70 hover:border-b-2 text-gray-800">  
+      <div>
+        <div>
+          <div class="flex flex-row justify-between items-center text-sm">
+            <p class="block mb-2 pt-1 md:pt-0 font-normal text-secondary">
+              {new Date(publishedOn).toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </p>
+
+            <p class="block text-secondary font-normal pr-2 read-post-btn"> 
+              Read Post → 
+            </p>
+          </div>
+        </div>
+
+        <h2 class="block text-2xl text-primary opacity-95 mb-2 ellipsis font-inter font-medium">{title}</h2> 
+      </div>
+        
+      <p class="text-base w-11/12 font-normal text-primary-light">
+        {summary}
+      </p>
+    </div>
+  </a>
+</article>
+
+
+     
