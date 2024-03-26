@@ -1,5 +1,7 @@
 # Portfolio Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/76eda2bb-4a35-4b8a-80a3-a2a61d514e93/deploy-status)](https://app.netlify.com/sites/sanjib-roy/deploys)
+
 ### Setup
 
 1. Clone the repository
