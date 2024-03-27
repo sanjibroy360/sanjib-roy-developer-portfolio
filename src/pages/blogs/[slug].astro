@@ -41,10 +41,10 @@ const { Content } = await post.render();
       <p class="mt-8 mb-0 p-0 text-sm mb-1 tracking-wide">
         Author: <a class="no-underline font-medium" href='/' rel="noopener noreferrer nofollow" area-label={`Author name is ${post.data.author}`} role="contentinfo">{post.data.author}</span>
       </p>
-      <p class="mt-0 mb-2 p-0 text-sm">
+      <p class="mt-0 mb-2 p-0 pb-3 text-sm border-b border-section-divider">
         Published on: <span class="font-medium" area-label={`This article was published on ${formattedPublishedAtDate}`} role="contentinfo">{formattedPublishedAtDate}</span>
       </p>
-      <div class="m-0"></div>
+      
       <div class="blog-content">
         <Content />
       </div>

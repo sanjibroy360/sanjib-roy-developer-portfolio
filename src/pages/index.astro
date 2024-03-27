@@ -1,6 +1,6 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import About from "~/components/HeroAboutText/index.astro"
+import HeroAboutText from "~/components/HeroAboutText/index.astro"
 import FeaturedProjects from "~/components/FeaturedProjects/index.astro"
 import BlogRow from "~/components/common/BlogRow.astro";
 import Skills from "~/components/Skills.astro";
@@ -18,9 +18,9 @@ const blogs = (await getCollection("posts")).sort(function (
 ---
 
 <Layout>
-  <main class="lg:my-32 mt-10 mb-12">
+  <main class="lg:mt-32 mt-10 mb-12">
     <div class="flex flex-col gap-6 lg:pt-0 md:py-5 divide-y divide-section-divider">
-      <About />
+      <HeroAboutText />
       <FeaturedProjects />
 
       <article class="flex flex-col gap-8 pt-6">
@@ -34,9 +34,9 @@ const blogs = (await getCollection("posts")).sort(function (
           </a>
         </header>
         <div
-        <section class="w-full text-sm lg:flex flex-col pb-10">
+        <section class="w-full text-sm lg:flex flex-col">
           {
-            blogs.map((post: any) => (
+            blogs?.slice(0,6).map((post: any) => (
               <BlogRow
                 title={post.data.title}
                 publishedOn={post.data.publishedOn.toLocaleDateString("en-us", {
@@ -54,7 +54,7 @@ const blogs = (await getCollection("posts")).sort(function (
       <section class="py-6">
         <Skills/>
       </section>
-      <section class="py-6">
+      <section class="pt-6">
         <Testimonials/>
       </section>
     </div>

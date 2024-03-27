@@ -23,7 +23,7 @@ const { title, contributions, company, years} = Astro.props;
 
     <ul class="list-disc md:ml-3">
       {contributions?.map(contribution => (
-          <li class="m-0 font-normal leading-normal py-2 text-base text-secondary">
+          <li class="m-0 font-normal leading-normal py-2 text-sm md:text-base text-secondary">
             <p> {contribution} </p>
           </li>
         ))

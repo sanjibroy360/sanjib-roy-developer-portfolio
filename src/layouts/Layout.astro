@@ -2,7 +2,8 @@
 import { ViewTransitions } from "astro:transitions";
 import { Config } from "~/config";
 import Header from '~/components/Header';
-import icon from "~/assets/Images/avatar.webp";
+import Footer from '~/components/Footer.astro';
+import icon from "~/assets/icon.webp";
 import ThemeToggler from "~/components/ThemeToggler"
 import "~/styles/tailwind.css";
 
@@ -58,6 +59,7 @@ const currentPath = Astro.url.pathname;
       
       <section class="lg:py-0 px-5 py-2 md:py-2">
         <slot />
+        <Footer/>
       </section>
     </section>
     <style is:global>
