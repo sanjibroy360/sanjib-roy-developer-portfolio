@@ -1,4 +1,4 @@
-import icon from "~/assets/Images/avatar.webp";
+import ogCard from "~/assets/Images/og-images/og-card.png";
 import avatarSamkit from "~/assets/Images/testimonials/avatar-samkit-jain.webp";
 
 interface IConfig {
@@ -361,6 +361,6 @@ export const Config: IConfig = {
   ],
   testimonials: Testimonials,
   og: {
-    image: icon.src,
+    image: ogCard.src,
   },
 };
