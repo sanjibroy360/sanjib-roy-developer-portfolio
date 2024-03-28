@@ -24,7 +24,7 @@ const {
   og_title = Config.me.name,
   og_description = Config.me.name + "'s personal website.",
   og_type = "website",
-  og_image = Config.og.image,
+  og_image = `${Config.website}${Config.og.image}`,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;

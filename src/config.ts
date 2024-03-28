@@ -1,4 +1,4 @@
-import ogCard from "/public/og-images/og-card.png";
+// import ogCard from "/og-images/og-card.png";
 import avatarSamkit from "~/assets/Images/testimonials/avatar-samkit-jain.webp";
 
 interface IConfig {
@@ -277,7 +277,7 @@ export const Config: IConfig = {
     educationDetails: EducationDetails,
     skills: Skills,
   },
-  website: "www.sanjibroy.com",
+  website: "https://sanjib-roy.netlify.app",
   pages: Pages,
   socials: {
     GitHub: "https://github.com/sanjibroy360",
@@ -361,6 +361,6 @@ export const Config: IConfig = {
   ],
   testimonials: Testimonials,
   og: {
-    image: ogCard.src,
+    image: "/og-images/og-card.png",
   },
 };
