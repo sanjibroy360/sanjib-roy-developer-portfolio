@@ -21,6 +21,7 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@tabler/icons": "^3.0.2",
     "astro": "^4.5.3",
+    "astro-og-canvas": "^0.4.2",
     "astro-robots-txt": "^1.0.0",
     "clsx": "^2.1.0",
     "phosphor-react": "^1.4.1",
