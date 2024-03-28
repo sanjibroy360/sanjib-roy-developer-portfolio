@@ -1,4 +1,4 @@
-import ogCard from "/og-images/og-card.png";
+import ogCard from "/public/og-images/og-card.png";
 import avatarSamkit from "~/assets/Images/testimonials/avatar-samkit-jain.webp";
 
 interface IConfig {
