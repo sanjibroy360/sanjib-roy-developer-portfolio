@@ -2,20 +2,6 @@
 import avatarImage from "~/assets/Images/avatar.webp";
 import "./styles.css";
 import {Config} from "~/config"
-
-// Calculate year of experience
-const { Date } = globalThis;
-const careerStartDate = new Date(Config.me.started)
-const currentDate = new Date();
-
-// Calculate the difference in years
-let yearsOfExperience = currentDate.getFullYear() - careerStartDate.getFullYear();
-
-// Check if the current month is before the starting month or if the current month is the same but the day is before the starting day
-if (currentDate.getMonth() < careerStartDate.getMonth() || (currentDate.getMonth() === careerStartDate.getMonth() && currentDate.getDate() < careerStartDate.getDate())) {
-  // Subtract one year if the current date is before the starting date in the same year
-  yearsOfExperience -= 1;
-}
 ---
 
 <article>
@@ -32,19 +18,21 @@ if (currentDate.getMonth() < careerStartDate.getMonth() || (currentDate.getMonth
   </div>
   <div class="flex flex-col md:flex-row items-center justify-between gap-6 lg:gap-8">
     <div class="basis-2/3">
-      <h2 class="text-secondary mb-5 md:text-3xl text-2xl">
+      <h1 class="text-secondary mb-5 md:text-3xl text12xl">
         <span class="opacity-70 p-0 m-0 font-normal text-blurry-text">
           Hi <span class="wave">👋</span>, I'm
         </span>
         <span class="font-bold text-primary">Sanjib Roy!</span>
-      </h2>
+      </h1>
       <div>
         <ul class="!mb-0 text-primary-light font-thin list-disc pl-4 space-y-1 md:space-y-[6px]">
-          <li class="text-primary-light text-sm md:text-base" class="text-sm md:text-base">
-            <p>
-              Software engineer, with {yearsOfExperience} {yearsOfExperience > 1 ? 'years' : 'year'} of industry experience.
-            </p>
-          </li>
+          {Config.me.yearsOfExperience > 0 && (
+            <li class="text-primary-light text-sm md:text-base" class="text-sm md:text-base">
+              <p>
+                Software engineer, with {Config.me.yearsOfExperience} {Config.me.yearsOfExperience > 1 ? 'years' : 'year'} of industry experience.
+              </p>
+            </li>
+          )}
           <li class="text-primary-light text-sm md:text-base">
             <p>
               Skilled in JavaScript, Next.js, React.js, Node.js, MongoDB, Ruby, Ruby on Rails, and <a

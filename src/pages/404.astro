@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {Config} from '~/config.ts'
 ---
 
-<Layout>
+<Layout title=`Page Not Found | ${Config.me.name}` og_type="website">
   <div class="hero absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
     <div class="hero-content text-center">
       <div class="max-w-md">

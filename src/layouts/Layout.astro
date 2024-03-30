@@ -17,18 +17,19 @@ interface Props {
   og_image?: string;
   blog_author?: string;
   blog_publishedOn?: string;
+  keywords?: string;
 }
 
 const {
   title = `${Config.me.name} | Software Developer`,
-  description = "I am Sanjib Roy, a Software Developer with over 3 years of remote work experience, proficient in JavaScript, React.js, Next.js, Node.js, TypeScript, Electron.js, MongoDB, Ruby, Ruby on Rails, and PostgreSQL",
-  keywords,
-  og_title = Config.me.name,
-  og_description = Config.me.name + "'s personal website.",
+  description = Config.app.description,
+  og_title = `${Config.me.name} | Software Developer`,
+  og_description = Config.app.description,
   og_type = "website",
   og_image = `${Config.website}${Config.og.image}`,
-  blog_author,
+  blog_author = Config.app.author,
   blog_publishedOn,
+  keywords= Config.app.keywords,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -38,24 +39,45 @@ const currentPath = Astro.url.pathname;
 <html class="bg-base-100 text-base-content overflow-y-scroll" lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={icon.src} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} data-rh="true">
+    <meta property="author" content={blog_author} />
+    <meta property="publish-date" content={blog_publishedOn} />
+    
     <meta property="og:title" content={og_title} />
     <meta property="og:description" content={og_description} />
     <meta property="og:type" content={og_type} />
     <meta property="og:image" content={og_image} />
     <meta property="og:url" content={Astro.request.url} />
-    <meta name="keywords" content={keywords} data-rh="true">
-    <meta property="author" content={blog_author} />
-    <meta property="publish-date" content={blog_publishedOn} />
+    <meta property="og:site_name" content={Config.app.site_name} />
+    <meta property="og:image:alt" content={og_title} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:widgets:new-embed-design" content="on" />
+    <meta name="twitter:site" content={Config.app.twitter_handle} />
+    <meta name="twitter:creator" content={Config.app.twitter_handle} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={og_image} />
+    <meta name="twitter:image:alt" content={og_title} />
+
+    <meta name="author" content={Config.app.author} />
+    
+    <link rel="icon" type="image/svg+xml" href={icon.src} />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
     <ViewTransitions />
   </head>
+
+
+
+
+
+
   <body class="relative bg-app">
     <ThemeToggler/>
     <section

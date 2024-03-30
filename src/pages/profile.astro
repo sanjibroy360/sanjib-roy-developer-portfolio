@@ -5,31 +5,16 @@ import Skills from "~/components/Skills.astro";
 import Testimonials from "~/components/Testimonials/index.astro";
 import SubHeading from "~/components/common/SubHeading.astro";
 import {Config} from "~/config"
-
-// Calculate year of experience
-const { Date } = globalThis;
-const careerStartDate = new Date(Config.me.started)
-const currentDate = new Date();
-
-// Calculate the difference in years
-let yearsOfExperience = currentDate.getFullYear() - careerStartDate.getFullYear();
-
-// Check if the current month is before the starting month or if the current month is the same but the day is before the starting day
-if (currentDate.getMonth() < careerStartDate.getMonth() || (currentDate.getMonth() === careerStartDate.getMonth() && currentDate.getDate() < careerStartDate.getDate())) {
-  // Subtract one year if the current date is before the starting date in the same year
-  yearsOfExperience -= 1;
-}
-
 ---
 
-<Layout>
+<Layout title=`Profile | ${Config.me.name}`>
   <main class="lg:mt-32 mt-10 mb-12 mb-20 divide-y divide-section-divider">
     <section class="pb-8">
       <h1 class="capitalize font-medium text-3xl mb-8 md:mb-14 mt-4" role="heading">
         Profile
       </h1>
       <em class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal">
-        Hi, I am Sanjib Roy, a Software Developer with over {yearsOfExperience} {yearsOfExperience > 1 ? "years": "year"} of remote work experience, proficient in <strong> JavaScript</strong>,<strong> React.js</strong>,<strong> Next.js</strong>,<strong> Node.js</strong>,<strong> TypeScript</strong>,<strong> Electron.js</strong>,<strong> MongoDB</strong>, <strong> Ruby</strong>,<strong> Ruby on Rails</strong>, and <strong> PostgreSQL</strong>. I completed my <strong area-label="Bachelor of Science in Computer Science (Honours)" title="Bachelor of Science in Computer Science (Honours)" class="font-normal">B.Sc in Computer Science (Hons.)</strong> in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.
+        Hi, I am Sanjib Roy, a Software Developer with {Config.me.yearsOfExperience} {Config.me.yearsOfExperience > 1 ? "years": "year"} of remote work experience, proficient in <strong> JavaScript</strong>,<strong> React.js</strong>,<strong> Next.js</strong>,<strong> Node.js</strong>,<strong> TypeScript</strong>,<strong> Electron.js</strong>,<strong> MongoDB</strong>, <strong> Ruby</strong>,<strong> Ruby on Rails</strong>, and <strong> PostgreSQL</strong>. I completed my <strong area-label="Bachelor of Science in Computer Science (Honours)" title="Bachelor of Science in Computer Science (Honours)" class="font-normal">B.Sc in Computer Science (Hons.)</strong> in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.
       </em>
       <div class="mt-4 w-11/12 flex items-center gap-x-2">
         <a

@@ -1,13 +1,44 @@
 // import ogCard from "/og-images/og-card.png";
 import avatarSamkit from "~/assets/Images/testimonials/avatar-samkit-jain.webp";
 
+const getYearsOfExperience = (careerStartDate: string | Date) => {
+  const currentDate = new Date();
+
+  if ((typeof careerStartDate)?.toLowerCase()?.trim() === "string") {
+    careerStartDate = new Date(careerStartDate);
+  }
+
+  // Calculate the difference in years
+  let yearsOfExperience =
+    currentDate.getFullYear() - careerStartDate.getFullYear();
+
+  // Check if the current month is before the starting month or if the current month is the same but the day is before the starting day
+  if (
+    currentDate.getMonth() < careerStartDate.getMonth() ||
+    (currentDate.getMonth() === careerStartDate.getMonth() &&
+      currentDate.getDate() < careerStartDate.getDate())
+  ) {
+    // Subtract one year if the current date is before the starting date in the same year
+    yearsOfExperience -= 1;
+  }
+  return yearsOfExperience;
+};
+
 interface IConfig {
+  app: {
+    site_name: string;
+    twitter_handle: string;
+    author: string;
+    keywords: string;
+    description: string;
+  };
   me: {
     avatar: string;
     name: string;
     about: string | string[];
     job: string;
     started: string;
+    yearsOfExperience: string | number;
     stack: string;
     hobby: string;
     projectLink: string;
@@ -260,12 +291,25 @@ const Testimonials: TestimonialsObj[] = [
 ];
 
 export const Config: IConfig = {
+  app: {
+    author: "Sanjib Roy",
+    site_name: "Sanjib Roy",
+    twitter_handle: "@sanjibroy360",
+    description: `Experienced full stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with ${getYearsOfExperience(
+      "2021-02-10"
+    )} ${
+      getYearsOfExperience("2021-02-10") > 1 ? "years" : "year"
+    } of remote work. Portfolio website shared my blogs, projects, journey`,
+    keywords:
+      "sanjib, sanjib roy, sanjibroy360, fullstack developer, mern stack developer, software developer, software engineer, frontend developer, portfolio, web developer, react developers, rails developer, javascript, sanjib roy official website, sanjib roy portfolio website, raniganj sanjib, west bengal sanjib, sanjib-roy",
+  },
   me: {
     avatar: "/src/assets/Images/avatar.webp",
     name: "Sanjib Roy",
     about: AboutMe,
     job: "Full-stack engineer",
     started: "2021-02-10", // Used to calculate years of experience dynamically
+    yearsOfExperience: getYearsOfExperience("2021-02-10"),
     stack: "MERN stack and Ruby on Rails",
     hobby: "gamble my life savings",
     projectLink: "/projects",
