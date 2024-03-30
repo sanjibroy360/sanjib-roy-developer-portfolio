@@ -8,20 +8,23 @@ const getYearsOfExperience = (careerStartDate: string | Date) => {
     careerStartDate = new Date(careerStartDate);
   }
 
-  // Calculate the difference in years
-  let yearsOfExperience =
-    currentDate.getFullYear() - careerStartDate.getFullYear();
+  if (careerStartDate instanceof Date && !isNaN(careerStartDate.getTime())) {
+    // Calculate the difference in years
+    let yearsOfExperience =
+      currentDate.getFullYear() - careerStartDate.getFullYear();
 
-  // Check if the current month is before the starting month or if the current month is the same but the day is before the starting day
-  if (
-    currentDate.getMonth() < careerStartDate.getMonth() ||
-    (currentDate.getMonth() === careerStartDate.getMonth() &&
-      currentDate.getDate() < careerStartDate.getDate())
-  ) {
-    // Subtract one year if the current date is before the starting date in the same year
-    yearsOfExperience -= 1;
+    // Check if the current month is before the starting month or if the current month is the same but the day is before the starting day
+    if (
+      currentDate.getMonth() < careerStartDate.getMonth() ||
+      (currentDate.getMonth() === careerStartDate.getMonth() &&
+        currentDate.getDate() < careerStartDate.getDate())
+    ) {
+      // Subtract one year if the current date is before the starting date in the same year
+      yearsOfExperience -= 1;
+    }
+    return yearsOfExperience;
   }
-  return yearsOfExperience;
+  return "";
 };
 
 interface IConfig {
@@ -295,10 +298,10 @@ export const Config: IConfig = {
     author: "Sanjib Roy",
     site_name: "Sanjib Roy",
     twitter_handle: "@sanjibroy360",
-    description: `Experienced full stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with ${getYearsOfExperience(
+    description: `Experienced full stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with ${+getYearsOfExperience(
       "2021-02-10"
-    )} ${
-      getYearsOfExperience("2021-02-10") > 1 ? "years" : "year"
+    ) || 'less than 1'} ${
+      +getYearsOfExperience("2021-02-10") > 1 ? "years" : "year"
     } of remote work. Portfolio website shared my blogs, projects, journey`,
     keywords:
       "sanjib, sanjib roy, sanjibroy360, fullstack developer, mern stack developer, software developer, software engineer, frontend developer, portfolio, web developer, react developers, rails developer, javascript, sanjib roy official website, sanjib roy portfolio website, raniganj sanjib, west bengal sanjib, sanjib-roy",
