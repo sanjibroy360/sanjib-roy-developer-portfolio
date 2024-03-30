@@ -29,11 +29,14 @@ const { Content } = await post.render();
 <Layout
   title={post.data.title}
   description={post.data.summary}
+  blog_author={post.data.author}
+  blog_publishedOn={formattedPublishedAtDate}
+
   keywords={post.data.keywords}
   og_title={post.data.title}
   og_description={post.data.summary}
   og_type="article"
-  og_image={`${Config.website}/og/${post.slug}`}
+  og_image={`${Config.website}/og/blogs/${post.slug}.png`}
 >
   <main class="lg:my-32 mt-10 mb-12">
     <article class="pt-8 pb-14 md:px-2 md:pt-6 min-h-screen blog-wrapper prose lg:m-0 mx-auto flex w-full lg:max-w-full max-w-prose flex-col">
