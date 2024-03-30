@@ -1152,7 +1152,7 @@
   resolved "https://registry.yarnpkg.com/@resvg/resvg-js-win32-x64-msvc/-/resvg-js-win32-x64-msvc-2.6.2.tgz#cb0ad04525d65f3def4c8d346157a57976d5b388"
   integrity sha512-ZXtYhtUr5SSaBrUDq7DiyjOFJqBVL/dOBN7N/qmi/pO0IgiWW/f/ue3nbvu9joWE5aAKDoIzy/CxsY0suwGosQ==
 
-"@resvg/resvg-js@^2.6.0", "@resvg/resvg-js@^2.6.2":
+"@resvg/resvg-js@^2.6.0":
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/@resvg/resvg-js/-/resvg-js-2.6.2.tgz#3e92a907d88d879256c585347c5b21a7f3bb5b46"
   integrity sha512-xBaJish5OeGmniDj9cW5PRa/PtmuVU3ziqrbr5xJj901ZDN4TosrVaNZpEiLZAxdfnhAe7uQ7QFWfjPe9d9K2Q==
@@ -1620,15 +1620,6 @@ astro-imagetools@^0.9.0:
   optionalDependencies:
     imagetools-core "3.0.2"
 
-astro-og-canvas@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/astro-og-canvas/-/astro-og-canvas-0.4.2.tgz#b271cc68f2a53bcc3e4decdd60e2fcce4e78b099"
-  integrity sha512-OQsH6Gr2HX9ZRHdVy2OcXVBIPI65WvEtLG/60krnphh8d3ldhuAFunymYaNGcrdSZcYgXkHWejbPt//3qaRidA==
-  dependencies:
-    canvaskit-wasm "^0.37.0"
-    deterministic-object-hash "^2.0.2"
-    entities "^4.4.0"
-
 astro-robots-txt@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/astro-robots-txt/-/astro-robots-txt-1.0.0.tgz#d5e47c03e7b3d6b070d75eb470dd3661fa19fe96"
@@ -1889,11 +1880,6 @@ caniuse-lite@^1.0.30001587, caniuse-lite@^1.0.30001599:
   version "1.0.30001600"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001600.tgz#93a3ee17a35aa6a9f0c6ef1b2ab49507d1ab9079"
   integrity sha512-+2S9/2JFhYmYaDpZvo0lKkfvuKIglrx68MwOBqMGHhQsNkLjB5xtc/TGoEPs+MxjSyN/72qer2g97nzR641mOQ==
-
-canvaskit-wasm@^0.37.0:
-  version "0.37.2"
-  resolved "https://registry.yarnpkg.com/canvaskit-wasm/-/canvaskit-wasm-0.37.2.tgz#add4321d720cae23f895644ed8f45757e03d6011"
-  integrity sha512-212imazRF98gLOTiU4JAXM7xDvaknI7jaPtAg4ETXGW5rLQs6pomgIvVPUSfoKnQVTdGgzj+B4e+/u0Da20aGg==
 
 ccount@^2.0.0:
   version "2.0.1"
@@ -2177,7 +2163,7 @@ detect-libc@^2.0.0, detect-libc@^2.0.2:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.3.tgz#f0cd503b40f9939b894697d19ad50895e30cf700"
   integrity sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==
 
-deterministic-object-hash@^2.0.1, deterministic-object-hash@^2.0.2:
+deterministic-object-hash@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/deterministic-object-hash/-/deterministic-object-hash-2.0.2.tgz#b251ddc801443905f0e9fef08816a46bc9fe3807"
   integrity sha512-KxektNH63SrbfUyDiwXqRb1rLwKt33AmMv+5Nhsw1kqZ13SJBRTgZHtGbE+hH3a1mVW1cz+4pqSWVPAtLVXTzQ==
