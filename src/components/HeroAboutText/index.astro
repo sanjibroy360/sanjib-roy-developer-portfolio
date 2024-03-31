@@ -23,20 +23,20 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
       <h1 class="text-secondary mb-5 md:text-3xl text12xl">
         <span class="opacity-70 p-0 m-0 font-normal text-blurry-text">
           Hi <span class="wave">👋</span>, I'm
-        </span>
-        <span class="font-bold text-primary">Sanjib Roy!</span>
+        </em>
+        <span class="font-bold text-primary">Sanjib Roy!</em>
       </h1>
       <div>
         <ul class="!mb-0 text-primary-light font-thin list-disc pl-4 space-y-1 md:space-y-[6px]">
           {+Config.me.yearsOfExperience > 0 && (
             <li class="text-primary-light text-sm md:text-base" class="text-sm md:text-base">
-              <p>
+              <em class="not-italic">
                 Software engineer, with {yearsOfExperienceString} of industry experience.
-              </p>
+              </em>
             </li>
           )}
           <li class="text-primary-light text-sm md:text-base">
-            <p>
+            <em class="not-italic">
               Skilled in JavaScript, Next.js, React.js, Node.js, MongoDB, Ruby, Ruby on Rails, and <a
                   class="border-b text-primary border-gray-300 hover:text-accent"
                   href="/#skills"
@@ -44,20 +44,20 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
                 >
                   more.
                 </a> 
-            </p>
+            </em>
           </li>
           <li class="text-primary-light text-sm md:text-base">
-            <p>
+            <em class="not-italic">
               Experienced in both product and service based companies.
-            </p>
+            </em>
           </li>
           <li class="text-primary-light text-sm md:text-base">
-            <p>
+            <em class="not-italic">
               Proficient in asynchronous communication for seamless collaboration in remote teams.
-            </p>
+            </em>
           </li>
           <li class="text-primary-light text-sm md:text-base">
-            <p>
+            <em class="not-italic">
                 Open to new opportunities, previously at{" "}
                 <a
                   class="border-b text-primary border-gray-300 hover:text-accent"
@@ -83,11 +83,11 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
                 >
                   BigBinary
                 </a>
-            </p>
+            </em>
           </li>
 
           <li class="text-primary-light text-sm md:text-base">
-            <p>Kinda active on Twitter{" "}
+            <em class="not-italic">Kinda active on Twitter{" "}
               <a
                 class="border-b text-primary border-gray-300 hover:text-accent"
                 href="https://twitter.com/sanjibroy360"
@@ -96,7 +96,7 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
               >
                 @sanjibroy360
               </a> 
-            </p>
+            </em>
           </li>
         </ul>
         <div class="md:mt-4 mt-6 flex justify-center md:justify-start items-center gap-x-2">
