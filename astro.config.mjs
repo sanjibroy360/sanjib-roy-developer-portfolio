@@ -8,6 +8,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 // import { astroOgImagesGenerator } from "og-images-generator/astro"; // Install "og-images-generator" npm package then use it to generate opengraph image
+import compress from "astro-compress";
 
 const prettyCodeOptions = {
   theme: "dark-plus",
@@ -61,5 +62,6 @@ export default defineConfig({
     }),
     astroImageTools,
     // astroOgImagesGenerator(),
+    compress(),
   ],
 });
