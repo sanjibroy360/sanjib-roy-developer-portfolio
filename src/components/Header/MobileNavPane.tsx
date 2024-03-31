@@ -26,7 +26,7 @@ function MobileNavDrawer({ currentPath }: Iprops) {
       >
         <div className="border bg-white/90 backdrop-filter backdrop-blur dark:bg-base-100 border-list-border bottom-0 absolute left-0 w-full pt-4 pb-8 rounded-t-lg text-sm px-3 z-50">
           <div>
-            <div className="absolute top-[-50px] right-[10px] z-20">
+            <div className="absolute top-[-250px] right-[10px] z-20">
               <button
                 id="mobile-close-nav-pane-btn"
                 className="hidden w-full !py-2 relative flex items-center justify-center px-2 rounded-lg cursor-pointer group text-sm shadow-sm border border-mobile-nav-btn-border min-h-[28px]  hover:scale-[0.98] bg-white dark:bg-base-100 text-mobile-nav-btn-content duration-100"

@@ -69,6 +69,12 @@ const currentPath = Astro.url.pathname;
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title={title} href={`http://localhost:4321/rss.xml`}/>
     <ViewTransitions />
   </head>
 
@@ -178,7 +184,7 @@ const currentPath = Astro.url.pathname;
 
       #mobile-nav-pane.hide {
         height: 0px;
-        transform: translateY(500px); /* Exit state, moved out of the viewport */
+        transform: translateY(1000px); /* Exit state, moved out of the viewport */
       }
 
       @media (hover: hover) {

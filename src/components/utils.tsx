@@ -4,6 +4,7 @@ import {
   InstagramLogo,
   LinkedinLogo,
   GithubLogo,
+  Rss,
 } from "phosphor-react";
 
 import { createKlass, createReklass } from "@klass/core/create";
@@ -32,6 +33,7 @@ export const getSocialIcon = (platformName: string) => {
     linkedin: <LinkedinLogo />,
     github: <GithubLogo />,
     instagram: <InstagramLogo />,
+    rss: <Rss />,
   };
 
   return icons[platformName?.toLowerCase()?.trim()] || null;
