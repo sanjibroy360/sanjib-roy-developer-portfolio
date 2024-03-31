@@ -379,7 +379,7 @@ export const Config: IConfig = {
     author: "Sanjib Roy",
     site_name: "Sanjib Roy",
     twitter_handle: "@sanjibroy360",
-    description: `Experienced full stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with ${
+    description: `Experienced Full Stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with ${
       +getYearsOfExperience("2021-02-10") || "less than 1"
     } ${
       +getYearsOfExperience("2021-02-10") > 1 ? "years" : "year"
@@ -423,6 +423,6 @@ export const Config: IConfig = {
   projects: Projects,
   testimonials: Testimonials,
   og: {
-    image: "/og-images/og-card.jpeg",
+    image: "/og/og-card.png",
   },
 };
