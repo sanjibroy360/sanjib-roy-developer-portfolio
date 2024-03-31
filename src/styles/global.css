@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "IBM Plex sans";
+    src: url("/fonts/IBMPlexSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "IBM Plex sans";
+    src: url("/fonts/IBMPlexSans-Medium.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "IBM Plex sans";
+    src: url("/fonts/IBMPlexSans-Bold.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.76 !important;
+  font-family: "IBM Plex sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+p,
+em {
+  font-family: "IBM Plex sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 400;
+  line-height: 1.76 !important;
+}
+.container {
+  max-width: 728px;
+}
+.custom-breadcrumbs {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-top: 0.5%;
+}
+
+.custom-breadcrumbs > ul {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  min-height: min-content;
+}
+
+.custom-breadcrumbs > ul > li {
+  display: flex;
+  align-items: center;
+}
+
+.custom-breadcrumbs > ul > li > a {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+#mobile-nav-pane {
+  transition: transform 0.3s ease-out;
+  transform: translateY(50px); /* Initial state, hidden below the viewport */
+}
+
+#mobile-nav-pane.show {
+  transform: translateY(0); /* Final state, visible */
+}
+
+#mobile-nav-pane.hide {
+  height: 0px;
+  transform: translateY(1000px); /* Exit state, moved out of the viewport */
+}
+
+@media (hover: hover) {
+  .custom-breadcrumbs > ul > li > a:hover {
+    text-decoration-line: underline;
+  }
+}
+
+.custom-breadcrumbs > ul > li > a:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.custom-breadcrumbs > ul > li > a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.custom-breadcrumbs > ul > li + *:before {
+  content: "/";
+  margin-left: 0.5rem /* 8px */;
+  margin-right: 0.75rem /* 12px */;
+  display: block;
+  opacity: 0.4;
+  background-color: transparent;
+}
+
+[dir="rtl"] .custom-breadcrumbs > ul > li + *:before {
+  --tw-rotate: -180deg;
+}
+
+/* Show line numbers in a code block */
+code {
+  counter-reset: line;
+}
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
+}
+
+/* Copy code button */
+.copy-code {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 4px;
+  background-color: #3730a3;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+.copy-code:hover {
+  background-color: #312e81;
+}
+
+pre {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* Link added to each header of any blog */
+.blog-wrapper {
+  scroll: smooth;
+}
+
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  position: relative;
+}
+
+.blog-content h2:hover,
+.blog-content h3:hover,
+.blog-content h4:hover,
+.blog-content h5:hover,
+.blog-content h6:hover,
+.blog-content h2 a:hover,
+.blog-content h3 a:hover,
+.blog-content h4 a:hover,
+.blog-content h5 a:hover,
+.blog-content h6 a:hover {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.blog-content h2 a,
+.blog-content h3 a,
+.blog-content h4 a,
+.blog-content h5 a,
+.blog-content h6 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+article.blog-card .read-post-btn {
+  display: none;
+}
+article.blog-card:hover .read-post-btn {
+  display: block;
+  transition: transform 0.3s ease-out;
+}
+
+.time-line-container > li:last-child .timeline-block > .bar {
+  display: none;
+}
+.time-line-container > li:last-child .timeline-desc {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
