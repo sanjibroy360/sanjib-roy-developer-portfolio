@@ -2,7 +2,7 @@ function ThemeToggler() {
   return (
     <div
       id="theme-toggle-btn"
-      className="md:fixed absolute right-2 top-2 p-2 flex items-center justify-center rounded-full  bg-base-100/70  shadow"
+      className="md:fixed absolute right-2 top-2 p-2 flex items-center justify-center rounded-full z-50 bg-base-100/70  shadow"
     >
       <label className=" swap swap-rotate">
         <input id="theme-input" type="checkbox" className="theme-controller" />

@@ -418,7 +418,7 @@ export const Config: IConfig = {
     Email: "mailto:sanjibroy.dev@gmail.com",
     Twitter: "https://twitter.com/sanjibroy360",
     Instagram: "https://www.instagram.com/sanjibroy360/",
-    "RSS feed": "/rss.xml",
+    RSS: "/rss.xml",
   },
   projects: Projects,
   testimonials: Testimonials,
