@@ -423,6 +423,6 @@ export const Config: IConfig = {
   projects: Projects,
   testimonials: Testimonials,
   og: {
-    image: "/og-images/og-banner.png",
+    image: "/og-images/og-card.jpeg",
   },
 };
