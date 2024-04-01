@@ -82,6 +82,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
     <ViewTransitions />
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1525FDSWP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-R1525FDSWP');
+  </script>
+
   <body class="relative bg-app">
     <ThemeToggler/>
     <section
