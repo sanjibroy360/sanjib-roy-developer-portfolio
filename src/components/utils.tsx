@@ -38,3 +38,7 @@ export const getSocialIcon = (platformName: string) => {
 
   return icons[platformName?.toLowerCase()?.trim()] || null;
 };
+
+export function removeTrailingSlash(url: string) {
+  return url.replace(/\/+$/, "");
+}

@@ -1,6 +1,7 @@
 import { ArrowSquareOut, House } from "phosphor-react";
-import clsx from "clsx";
 import { Config } from "~/config";
+import { removeTrailingSlash } from "~/components/utils";
+import clsx from "clsx";
 
 function NavLinks({ currentPath, ctrlNavPaneStateClassName }: Iprops) {
   const navClass =
@@ -18,7 +19,7 @@ function NavLinks({ currentPath, ctrlNavPaneStateClassName }: Iprops) {
           >
             <a
               rel={page.external ? "noopener noreferrer nofollow" : ""}
-              href={page.url}
+              href={removeTrailingSlash(page.url)}
               target={page.external ? "_blank" : ""}
               aria-label={page.title}
               className={clsx(
