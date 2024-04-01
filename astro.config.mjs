@@ -33,7 +33,6 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),
-    sitemap(),
     robotsTxt({
       policy: [
         {
@@ -67,6 +66,9 @@ export default defineConfig({
       config: {
         forward: ["dataLayer.push"],
       },
+    }),
+    sitemap({
+      customPages: ["https://sanjibroy.com/rss.xml"],
     }),
     compress(),
   ],
