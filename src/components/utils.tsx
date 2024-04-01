@@ -40,5 +40,5 @@ export const getSocialIcon = (platformName: string) => {
 };
 
 export function removeTrailingSlash(url: string) {
-  return url.replace(/\/+$/, "");
+  return url.replace(/\/+$/, "")?.trim() || '/';
 }
