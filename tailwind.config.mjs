@@ -30,16 +30,12 @@ export default {
         "mobile-nav-btn-content": "var(--mobile-nav-btn-content)",
         "mobile-nav-btn": "var(--mobile-nav-btn)",
         "mobile-nav-btn-border": "var(--mobile-nav-btn-border)",
-        // "xyz-200": "#e5e7eb",
-        // "xyz-200-dark": "#1f2937",
+        "mobile-nav-pane-bg": "var(--mobile-nav-pane-bg)",
       },
       boxShadow: {
         "card-box-shadow": "var(--card-box-shadow)",
         "mobile-nav-btn-shadow": "var(--mobile-nav-btn-shadow)",
       },
-      // opacity: {
-      //   "mobile-nav"
-      // },
       fontFamily: {
         sans: ["Inter"].concat(defaultTheme.fontFamily.sans),
         mono: ["Roboto Mono"].concat(defaultTheme.fontFamily.mono),
@@ -76,6 +72,7 @@ export default {
           "--mobile-nav-btn-border": "#d4d4d4",
           "--mobile-nav-btn-shadow": "0 0 20px rgba(0,0,0,0.1)",
           "--section-divider": "#e5e7eb",
+          "--mobile-nav-pane-bg": "#ffffffe6",
         },
       },
       {
@@ -105,6 +102,7 @@ export default {
           "--mobile-nav-btn-border": "#404040",
           "--mobile-nav-btn-shadow": "0 0 20px rgba(0,0,0,0.7)",
           "--section-divider": "#1f2937",
+          "--mobile-nav-pane-bg": "#171717e6",
         },
       },
     ],

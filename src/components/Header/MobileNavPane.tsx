@@ -24,7 +24,7 @@ function MobileNavDrawer({ currentPath }: Iprops) {
         id="mobile-nav-pane"
         className="fixed bottom-0 left-0 z-50 hide w-full p-2 md:hidden duration-100"
       >
-        <div className="border bg-white/90 backdrop-filter backdrop-blur dark:bg-base-100 border-list-border bottom-0 absolute left-0 w-full pt-4 pb-8 rounded-t-lg text-sm px-3 z-50">
+        <div className="border backdrop-filter backdrop-blur bg-mobile-nav-pane-bg border-list-border bottom-0 absolute left-0 w-full pt-4 pb-8 rounded-t-lg text-sm px-3 z-50">
           <div>
             <div className="absolute top-[-50px] right-[10px] z-20">
               <button
