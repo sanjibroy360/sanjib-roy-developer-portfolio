@@ -38,6 +38,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
 <!doctype html>
 <html class="bg-base-100 text-base-content overflow-y-scroll" lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-R1525FDSWP">
+    </script>
+
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R1525FDSWP');
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -82,15 +94,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
     <ViewTransitions />
   </head>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1525FDSWP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-R1525FDSWP');
-  </script>
 
   <body class="relative bg-app">
     <ThemeToggler/>

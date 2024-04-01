@@ -7,6 +7,7 @@ import { astroImageTools } from "astro-imagetools";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import partytown from "@astrojs/partytown";
 // import { astroOgImagesGenerator } from "og-images-generator/astro"; // Install "og-images-generator" npm package then use it to generate opengraph image
 import compress from "astro-compress";
 
@@ -62,6 +63,11 @@ export default defineConfig({
     }),
     astroImageTools,
     // astroOgImagesGenerator(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
     compress(),
   ],
 });
