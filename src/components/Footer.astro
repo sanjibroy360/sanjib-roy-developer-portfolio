@@ -1,5 +1,6 @@
 ---
 import {Config} from "~/config.ts";
+import SocialLinks from '~/components/Header/SocialLinks.tsx'
 ---
 
 <footer class="pt-5 border-t border-section-divider mb-20 mt-auto">
@@ -7,4 +8,7 @@ import {Config} from "~/config.ts";
   area-label={`© Copyright ${new Date().getFullYear()} ${Config.me.name}`}>
     <p class="hover:underline text-[13px] text-center capitalize text-list-date opacity-90 ">© {new Date().getFullYear()} {Config.me.name}</p>
   </a>
+  <div class='md:hidden mt-4 grid justify-center items-center opacity-90'>
+    <SocialLinks/>
+  </div>
 </footer>

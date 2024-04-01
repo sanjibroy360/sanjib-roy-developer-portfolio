@@ -410,7 +410,7 @@ export const Config: IConfig = {
     educationDetails: EducationDetails,
     skills: Skills,
   },
-  website: "https://sanjib-roy.netlify.app",
+  website: "https://sanjibroy.com",
   pages: Pages,
   socials: {
     GitHub: "https://github.com/sanjibroy360",

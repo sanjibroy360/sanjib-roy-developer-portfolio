@@ -17,7 +17,7 @@ const prettyCodeOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.sanjibroy.com",
+  site: "https://sanjibroy.com",
   trailingSlash: "ignore",
   markdown: {
     extendDefaultPlugins: true,

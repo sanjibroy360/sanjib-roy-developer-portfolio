@@ -32,6 +32,7 @@ const {
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
@@ -63,8 +64,8 @@ const currentPath = Astro.url.pathname;
     <meta name="twitter:image:alt" content={og_title} />
 
     <meta name="author" content={Config.app.author} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="apple-touch-icon" href="/touch-icons/main-icon.png">
-    
     <link rel="icon" type="image/svg+xml" href={icon.src} />
     <link
       rel="stylesheet"
