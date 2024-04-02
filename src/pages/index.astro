@@ -25,10 +25,10 @@ const blogs = (await getCollection("posts")).sort(function (
 
       <article class="flex flex-col gap-8 pt-6">
         <header class="flex w-full flex-row justify-between gap-2">
-          <SubHeading text="Blog" />
+          <SubHeading text="Blogs" />
           <a
             href="/blogs"
-            class="text-sm text-secondary underline decoration-dashed underline-offset-8"
+            class="text-sm text-secondary underline decoration-dashed decoration-list-border underline-offset-8 hover:decoration-list-border-hover hover:text-primary/80"
             rel="noopener noreferrer nofollow"
             >View all blog posts →
           </a>
