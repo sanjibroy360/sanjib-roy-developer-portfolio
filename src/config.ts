@@ -1,5 +1,6 @@
 // import ogCard from "/og-images/og-card.png";
-import avatarSamkit from "~/assets/Images/testimonials/avatar-samkit-jain.webp";
+import avatarSamkit from "~/assets/Images/testimonials/samkit-jain.webp";
+import avatarJijo from "~/assets/Images/testimonials/jijo-bose.webp";
 
 const getYearsOfExperience = (careerStartDate: string | Date) => {
   const currentDate = new Date();
@@ -290,6 +291,15 @@ const Skills: SkillObj[] = [
 ];
 
 const Testimonials: TestimonialsObj[] = [
+  {
+    avatar: avatarJijo.src,
+    role: "Senior Software Developer at Saeloun",
+    name: "Jijo Bose",
+    message: `I have worked with Sanjib to build a desktop app built using ElectronJS. 
+    
+    Sanjib possesses a deep understanding of the Ruby on Rails, ElectronJS and Typescript. He consistently wrote clean, maintainable, and well-documented code, adhering to best practices and industry standards.`,
+    link: "https://www.linkedin.com/in/sanjibroy360/details/recommendations",
+  },
   {
     avatar: avatarSamkit.src,
     role: "Principal Engineer at Juvoxa",
