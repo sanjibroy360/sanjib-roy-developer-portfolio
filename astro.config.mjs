@@ -68,7 +68,10 @@ export default defineConfig({
       },
     }),
     sitemap({
-      customPages: ["https://sanjibroy.com/rss.xml"],
+      customPages: [
+        "https://sanjibroy.com/rss.xml",
+        "https://sanjibroy.com/favicon.ico",
+      ],
     }),
     compress(),
   ],

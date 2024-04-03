@@ -3,7 +3,6 @@ import { ViewTransitions } from "astro:transitions";
 import { Config } from "~/config";
 import Header from '~/components/Header';
 import Footer from '~/components/Footer.astro';
-import icon from "~/assets/icon.webp";
 import ThemeToggler from "~/components/ThemeToggler"
 import "~/styles/global.css";
 
@@ -80,7 +79,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
     <meta name="author" content={Config.app.author} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="apple-touch-icon" href="/touch-icons/main-icon.png">
-    <link rel="icon" type="image/svg+xml" href={icon.src} />
+    <link rel="icon" type="image/png" href='/icon.png' />
     <link
       rel="stylesheet"
       media="print" 
