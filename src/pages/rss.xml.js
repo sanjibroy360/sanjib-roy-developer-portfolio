@@ -136,7 +136,6 @@ export const GET = async () => {
     // (optional) inject custom xml
     customData: `
       <language>en-us</language>
-      <atom:link href="https://sanjibroy.com/rss.xml" rel="self" type="application/rss+xml" />
     `,
   });
 };
