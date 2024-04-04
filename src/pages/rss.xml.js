@@ -118,6 +118,9 @@ export const GET = async () => {
     // list of `<item>`s in output xml
     // simple example: generate items for every md file in /src/pages
     // see "Generating items" section for required frontmatter and advanced use cases
+    xmlns: {
+      atom: "http://www.w3.org/2005/Atom",
+    },
     items: items.map((item) => {
       let itemObj = {
         title: `${item.data.title} | ${item.data.type}`,
@@ -136,6 +139,7 @@ export const GET = async () => {
     // (optional) inject custom xml
     customData: `
       <language>en-us</language>
+      <atom:link href="https://sanjibroy.com/rss.xml" rel="self" type="application/rss+xml" />
     `,
   });
 };
