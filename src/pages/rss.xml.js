@@ -125,7 +125,7 @@ export const GET = async () => {
         description: item.data.summary,
         link: item.data.link,
         categories: item.data.categories,
-        author: "sanjibroy.dev@gmail.com",
+        author: "sanjibroy.dev@gmail.com (Sanjib Roy)",
       };
 
       if (item?.type?.toLowerCase()?.trim() === "blog") {
@@ -136,6 +136,7 @@ export const GET = async () => {
     // (optional) inject custom xml
     customData: `
       <language>en-us</language>
+      <atom:link href="https://sanjibroy.com/rss.xml" rel="self" type="application/rss+xml" />
     `,
   });
 };
