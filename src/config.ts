@@ -413,7 +413,7 @@ export const Config: IConfig = {
     hobby: "gamble my life savings",
     projectLink: "/projects",
     resumeLink:
-      "https://drive.google.com/file/d/1BpoaWbM8-6194n6OxAI4fQLuyfN4qN8r/view?usp=sharing",
+      "https://drive.google.com/file/d/1t-2hyY0l3piAGhSDD7A6GSoew8whmM-F/view?usp=sharing",
   },
   about: {
     workExperiences: WorkExperiences,
