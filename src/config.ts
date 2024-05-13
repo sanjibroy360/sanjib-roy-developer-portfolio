@@ -2,6 +2,8 @@
 import avatarSamkit from "~/assets/Images/testimonials/samkit-jain.webp";
 import avatarJijo from "~/assets/Images/testimonials/jijo-bose.webp";
 
+const RESUME_LINK: string = "https://drive.google.com/file/d/1t-2hyY0l3piAGhSDD7A6GSoew8whmM-F/view?usp=sharing";
+
 const getYearsOfExperience = (careerStartDate: string | Date) => {
   const currentDate = new Date();
 
@@ -135,7 +137,7 @@ const Pages: LinkObj[] = [
   },
   {
     title: "Resume",
-    url: "https://drive.google.com/file/d/1BpoaWbM8-6194n6OxAI4fQLuyfN4qN8r/view?usp=sharing",
+    url: RESUME_LINK,
     external: true,
   },
   {
@@ -412,8 +414,7 @@ export const Config: IConfig = {
     stack: "MERN stack and Ruby on Rails",
     hobby: "gamble my life savings",
     projectLink: "/projects",
-    resumeLink:
-      "https://drive.google.com/file/d/1t-2hyY0l3piAGhSDD7A6GSoew8whmM-F/view?usp=sharing",
+    resumeLink: RESUME_LINK,
   },
   about: {
     workExperiences: WorkExperiences,
