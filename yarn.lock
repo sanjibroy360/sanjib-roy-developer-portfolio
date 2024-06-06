@@ -1959,7 +1959,7 @@ astro-robots-txt@^1.0.0:
     valid-filename "^4.0.0"
     zod "^3.22.2"
 
-astro@^4.5.3:
+astro@^4.10.0:
   version "4.10.0"
   resolved "https://registry.yarnpkg.com/astro/-/astro-4.10.0.tgz#85dce346e2b6eb1fb3d1abcaab5fa3f501bb7d35"
   integrity sha512-UNVGGZIwdEPIUumcwgIQnd90b4/PslReY9q3xy/Q6bIq/kvK0duIWCbhFPwf06xu+1tExziP9Jl+klvLXM0LfA==
