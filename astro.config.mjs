@@ -7,6 +7,7 @@ import { astroImageTools } from "astro-imagetools";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import partytown from "@astrojs/partytown";
 import compress from "astro-compress";
 
 const prettyCodeOptions = {
@@ -58,6 +59,11 @@ export default defineConfig({
       ],
     }),
     astroImageTools,
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
     sitemap({
       customPages: [
         "https://sanjibroy.com/rss.xml",
