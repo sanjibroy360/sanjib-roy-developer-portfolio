@@ -1,22 +1,42 @@
 ---
-import Layout from "~/layouts/Layout.astro"
-import TimeLine from "~/components/TimeLine/index.astro"
+import Layout from "~/layouts/Layout.astro";
+import TimeLine from "~/components/TimeLine/index.astro";
 import Skills from "~/components/Skills.astro";
 import Testimonials from "~/components/Testimonials/index.astro";
 import SubHeading from "~/components/common/SubHeading.astro";
-import {Config} from "~/config"
+import { Config } from "~/config";
 
-const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'} ${+Config.me.yearsOfExperience > 1 ? 'years' : 'year'}`;
+const yearsOfExperienceString = `${Config.me.yearsOfExperience || "less than 1"} ${+Config.me.yearsOfExperience > 1 ? "years" : "year"}`;
 ---
 
 <Layout title={`Profile | ${Config.me.name}`}>
   <main class="lg:mt-32 mt-10 mb-12 mb-20 divide-y divide-section-divider">
     <section class="pb-8">
-      <h1 class="capitalize font-medium text-3xl mb-8 md:mb-14 mt-4" role="heading">
+      <h1
+        class="capitalize font-medium text-3xl mb-8 md:mb-14 mt-4"
+        role="heading"
+      >
         Profile
       </h1>
-      <em class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal">
-        Hi, I am Sanjib Roy, a Software Developer with {yearsOfExperienceString} of remote work experience, proficient in <strong> JavaScript</strong>,<strong> React.js</strong>,<strong> Next.js</strong>,<strong> Node.js</strong>,<strong> TypeScript</strong>,<strong> Electron.js</strong>,<strong> MongoDB</strong>, <strong> Ruby</strong>,<strong> Ruby on Rails</strong>, and <strong> PostgreSQL</strong>. I completed my <strong area-label="Bachelor of Science in Computer Science (Honours)" title="Bachelor of Science in Computer Science (Honours)" class="font-normal">B.Sc in Computer Science (Hons.)</strong> in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.
+      <em
+        class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal"
+      >
+        Hi, I am Sanjib Roy, a Software Developer with {yearsOfExperienceString}
+        of remote work experience, proficient in <strong>
+          JavaScript</strong
+        >,<strong> React.js</strong>,<strong> Next.js</strong>,<strong>
+          Node.js</strong
+        >,<strong> TypeScript</strong>,<strong> Electron.js</strong>,<strong>
+          MongoDB</strong
+        >, <strong> Ruby</strong>,<strong> Ruby on Rails</strong>, and <strong>
+          PostgreSQL</strong
+        >. I completed my <strong
+          area-label="Bachelor of Science in Computer Science (Honours)"
+          title="Bachelor of Science in Computer Science (Honours)"
+          class="font-normal">B.Sc in Computer Science (Hons.)</strong
+        > in 2019. Throughout my career, I have led a couple of teams in developing
+        applications from scratch, managed a couple of projects single-handedly and
+        I love taking on challenging projects that will push me to learn and grow.
       </em>
       <div class="mt-4 w-11/12 flex items-center gap-x-2">
         <a
@@ -25,65 +45,101 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
           target="_blank"
           class="inline-block !font-inter font-bold text-xs bg-blue-btn text-white capitalize rounded-full md:rounded-md text-center border-2 border-blue-btn"
         >
-          <button class="inline-block basis-2/5 md:basis-[25%] px-2 py-2.5 !font-inter font-bold text-xs bg-blue-btn text-white capitalize rounded-full md:rounded-md">Download Resume</button>    
-        </a>     
+          <button
+            class="inline-block basis-2/5 md:basis-[25%] px-2 py-2.5 !font-inter font-bold text-xs bg-blue-btn text-white capitalize rounded-full md:rounded-md"
+            >Download Resume</button
+          >
+        </a>
       </div>
     </section>
     <section class="px-0 flex flex-col gap-8 py-8">
-      <SubHeading text="Experience"/>
+      <SubHeading text="Experience" />
       <ul class="block list-none time-line-container h-full grid gap-4">
-        {Config.about.workExperiences.map((workExp) => (
-          <TimeLine 
-            type="work"
-            title={workExp.title}
-            years={workExp.years}
-            company={workExp.company}
-            contributions= {workExp.contributions}
-          />
-        ))}
+        {
+          Config.about.workExperiences.map((workExp) => (
+            <TimeLine
+              type="work"
+              title={workExp.title}
+              years={workExp.years}
+              company={workExp.company}
+              contributions={workExp.contributions}
+            />
+          ))
+        }
       </ul>
     </section>
     <section class="flex flex-col gap-8 py-8">
       <SubHeading text="Education" />
       <ul class="block list-none time-line-container h-full grid gap-4">
-        {Config.about.educationDetails?.map(education => (
-          <TimeLine 
-            type="education"
-            title={education.title}
-            years={education.years}
-            institute={education.institute}
-            address={education.address}
-          />
-        ))}
+        {
+          Config.about.educationDetails?.map((education) => (
+            <TimeLine
+              type="education"
+              title={education.title}
+              years={education.years}
+              institute={education.institute}
+              address={education.address}
+            />
+          ))
+        }
       </ul>
     </section>
     <section class="py-8">
-      <Skills/>
+      <Skills />
     </section>
     <section class="py-8">
-      <Testimonials/>
+      <Testimonials />
     </section>
     <section class="py-8">
       <SubHeading text="Achievements" />
       <ul class="block list-disc h-full grid gap-y-1 px-4">
         <li>
-          <em class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal pt-8 mb-0">
-            Ranked 3kyu on Codewars <a href="https://www.codewars.com/users/sanjibroy360" target="_blank" rel="noopener noreferrer nofollow" class="border-b text-primary/75 border-gray-300 hover:text-accent">(@sanjibroy360)</a>, a coding practice site for all programmers. I have solved 300+ problems in different languages such as JavaScript, Ruby, and Python.
+          <em
+            class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal pt-8 mb-0"
+          >
+            Ranked 3kyu on Codewars <a
+              href="https://www.codewars.com/users/sanjibroy360"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              class="border-b text-primary/75 border-gray-300 hover:text-accent"
+              >(@sanjibroy360)</a
+            >, a coding practice site for all programmers. I have solved 300+
+            problems in different languages such as JavaScript, Ruby, and
+            Python.
           </em>
-          <a href="https://www.codewars.com/users/sanjibroy360" target="_blank" rel="noopener noreferrer nofollow" class="border-b text-primary/75 border-gray-300 hover:text-accent mb-0">
-            <img src="https://www.codewars.com/users/sanjibroy360/badges/large" class="mt-4 object-contain" alt="Codewars Badge - @sanjibroy360"/>
+          <a
+            href="https://www.codewars.com/users/sanjibroy360"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            class="border-b text-primary/75 border-gray-300 hover:text-accent mb-0"
+          >
+            <img
+              src="https://www.codewars.com/users/sanjibroy360/badges/large"
+              class="mt-4 object-contain"
+              alt="Codewars Badge - @sanjibroy360"
+            />
           </a>
         </li>
         <li>
-          <em class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal pt-8">I have won lot of prizes in Bengali poetry recitation competitions.
+          <em
+            class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal pt-8"
+            >I have won lot of prizes in Bengali poetry recitation competitions.
           </em>
         </li>
       </ul>
     </section>
     <section class="pt-8">
       <SubHeading text="My Leisurely Pastimes" />
-      <em class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal pt-8">
-        When I'm not coding, you will find me chilling with some awesome Bengali movies directed by renowned Bengali directors like Ritwik Ghatak, Satyajit Ray, Kaushik Ganguly, Rituparno Ghosh, etc. Or I'll be capturing moments on my phone and being a huge foodie, always on the lookout for new spots to eat and trying them out! For me, it's all about the tasty adventures, creating lasting memories, spreading positive vibes wherever I go and leaving a positive impact on the world.
+      <em
+        class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal pt-8"
+      >
+        When I'm not coding, you will find me chilling with some awesome Bengali
+        movies directed by renowned Bengali directors like Ritwik Ghatak,
+        Satyajit Ray, Kaushik Ganguly, Rituparno Ghosh, etc. Or I'll be
+        capturing moments on my phone and being a huge foodie, always on the
+        lookout for new spots to eat and trying them out! For me, it's all about
+        the tasty adventures, creating lasting memories, spreading positive
+        vibes wherever I go and leaving a positive impact on the world.
       </em>
     </section>
   </main>

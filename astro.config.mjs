@@ -8,7 +8,6 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import partytown from "@astrojs/partytown";
-import compress from "astro-compress";
 
 const prettyCodeOptions = {
   theme: "dark-plus",
@@ -70,6 +69,5 @@ export default defineConfig({
         "https://sanjibroy.com/favicon.ico",
       ],
     }),
-    compress(),
   ],
 });

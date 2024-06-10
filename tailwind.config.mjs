@@ -4,17 +4,17 @@ import colors from "tailwindcss/colors";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    screens: {
+      sm: "576px",
+      md: "960px",
+      lg: "1440px",
+    },
     extend: {
       minHeight: {
         40.5: "10.375rem",
       },
       screens: {
         s8: { max: "360px" }, // Custom breakpoint for Samsung Galaxy S8
-        sm: { max: "640px" }, // Default breakpoint
-        md: { max: "768px" }, // Default breakpoint
-        lg: { max: "1024px" }, // Default breakpoint
-        xl: { max: "1280px" }, // Default breakpoint
-        "2xl": { max: "1536px" }, // Default breakpoint
       },
       colors: {
         gray: colors.neutral,

@@ -4,7 +4,8 @@ import { Config } from "~/config";
 import Header from '~/components/Header';
 import Footer from '~/components/Footer.astro';
 import ThemeToggler from "~/components/ThemeToggler"
-import "~/styles/global.css";
+import '~/styles/global.css';
+
 
 interface Props {
   title?: string;
@@ -38,10 +39,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
 <html class="bg-base-100 text-base-content overflow-y-scroll" lang="en">
   <head>
     <!-- Google tag (gtag.js) for Google analytics -->
-    <script type="text/partytown"  src="https://www.googletagmanager.com/gtag/js?id=G-R1525FDSWP">
+    <script is:inline  src="https://www.googletagmanager.com/gtag/js?id=G-R1525FDSWP">
     </script>
 
-    <script type="text/partytown" >
+    <script is:inline >
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);

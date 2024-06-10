@@ -33,7 +33,7 @@ const blogs = (await getCollection("posts")).sort(function (
             >View all blog posts →
           </a>
         </header>
-        <div
+        
         <section class="w-full text-sm lg:flex flex-col">
           {
             blogs?.slice(0,6).map((post: any) => (
