@@ -18,7 +18,7 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
       decoding="async"
     />
   </div>
-  <div class="flex flex-col md:flex-row items-center justify-between gap-6 lg:gap-8">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-8">
     <div class="basis-2/3">
       <h1 class="text-secondary md:mb-5 mb-4 s8:mb-2 mt-2 s8:mt-1 md:mt-0 md:text-3xl text-2xl s8:text-[22px]">
         <em class="font-inter opacity-90 not-italic p-0 m-0 font-normal ">
@@ -99,7 +99,7 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
             </em>
           </li>
         </ul>
-        <div class="md:mt-4 mt-6 flex justify-center md:justify-start items-center gap-x-2">
+        <div class="md:mt-4 mt-6 flex justify-center md:justify-start items-center gap-x-2 md:hidden">
           <a
             href={Config.me.resumeLink}
             rel="noopener noreferrer nofollow"

@@ -10,6 +10,11 @@ export default {
       },
       screens: {
         s8: { max: "360px" }, // Custom breakpoint for Samsung Galaxy S8
+        sm: { max: "640px" }, // Default breakpoint
+        md: { max: "768px" }, // Default breakpoint
+        lg: { max: "1024px" }, // Default breakpoint
+        xl: { max: "1280px" }, // Default breakpoint
+        "2xl": { max: "1536px" }, // Default breakpoint
       },
       colors: {
         gray: colors.neutral,

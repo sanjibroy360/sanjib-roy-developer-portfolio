@@ -4,7 +4,7 @@
 
 ### 🛠️ Technologies used
 
-- ⚡️ Astro.js (^4.10.0)
+- ⚡️ Astro.js
 - 🔥 React.js
 - 🎨 Tailwind CSS
 - 🔍 TypeScript
