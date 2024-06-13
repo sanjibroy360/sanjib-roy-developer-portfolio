@@ -11,11 +11,6 @@ Hey there! Welcome to my portfolio website repository. I'm Sanjib Roy, an **Expe
 - 🔥 React.js
 - 🎨 Tailwind CSS
 - 🔍 TypeScript
-<br/>
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
-    <img src="src/assets/Images/performance/desktop-view-performance.png" width="395px" style="display: block; object-fit: contain;" alt="Lighthouse: Desktop View Performance"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="src/assets/Images/performance/mobile-view-performance.png" width="395px" style="display: block; object-fit: contain;" alt="Lighthouse: Mobile View Performance"/>
-</div>
 
 ## Installation
 
