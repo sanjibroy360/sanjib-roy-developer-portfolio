@@ -1,10 +1,10 @@
 # Portfolio Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/76eda2bb-4a35-4b8a-80a3-a2a61d514e93/deploy-status)](https://app.netlify.com/sites/sanjib-roy/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/10743dcd-2b00-4ac4-ba4e-22d3c31a07ad/deploy-status)](https://app.netlify.com/sites/sanjib-roy/deploys)
 
 ### 🛠️ Technologies used
 
-- ⚡️ Astro.js
+- ⚡️ Astro.js (^4.10.1)
 - 🔥 React.js
 - 🎨 Tailwind CSS
 - 🔍 TypeScript
