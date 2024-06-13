@@ -24,7 +24,7 @@ git clone git@github.com:sanjibroy360/portfolio-sanjib.git
 2. Go to the project directory:
 
 ```bash
-cd portfolio-sanjib
+cd sanjib-roy-developer-portfolio
 ```
 
 3. Install Packages
