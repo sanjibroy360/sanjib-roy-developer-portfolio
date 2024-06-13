@@ -69,4 +69,7 @@ I'd love to connect with you! You can find me on:
 - Email: [sanjibroy.dev@gmail.com](mailto:sanjibroy.dev@gmail.com) <br/>
 
 ## License
-Feel free to use this repository for learning and personal purposes. If you decide to publish it online, please ensure to include a mandatory attribution link to [sanjibroy.com](https://sanjibroy.com/)
+
+Feel free to use this repository for learning and personal purposes. If you decide to publish it online, please ensure to include a mandatory attribution link to [sanjibroy.com](https://sanjibroy.com/).
+For more details, view the [MIT License](https://github.com/sanjibroy360/sanjib-roy-developer-portfolio/blob/master/LICENSE).
+
