@@ -1,6 +1,8 @@
-MIT License
+## License
 
-Copyright (c) 2024 Sanjib Roy
+MIT License with Attribution and Non-Sellable Clause
+
+Copyright (c) ${new Date().getFullYear()} Sanjib Roy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -8,6 +10,10 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+
+If you publish the Software online (for example, on a website or publicly accessible repository), you must include a prominent attribution link to [sanjibroy.com](https://sanjibroy.com) within the user interface or in the documentation of the Software.
+
+The Software or its derivatives may not be sold, sublicensed, or monetized in any way without explicit permission from the copyright holder.
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
