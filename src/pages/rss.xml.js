@@ -111,7 +111,7 @@ export const GET = async () => {
     // `<title>` field in output xml
     title: "Sanjib Roy | Software Developer",
     // `<description>` field in output xml
-    description: `Hi, I am Sanjib Roy, a Software Developer with 3 years of remote work experience, proficient in JavaScript, React.js, Next.js, Node.js, TypeScript, Electron.js, MongoDB, Ruby, Ruby on Rails, and PostgreSQL. I completed my Bachelor of Science in Computer Science (Honours) in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.`,
+    description: `Hi, I am Sanjib Roy, a Software Developer with 4 years of experience, proficient in JavaScript, React.js, Next.js, Node.js, TypeScript, Electron.js, MongoDB, Ruby, Ruby on Rails, and PostgreSQL. I completed my Bachelor of Science in Computer Science (Honours) in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.`,
     // base URL for RSS <item> links
     // SITE will use "site" from your project's astro.config.
     site: import.meta.env.SITE,

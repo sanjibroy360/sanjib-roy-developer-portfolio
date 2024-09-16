@@ -2,7 +2,8 @@
 import avatarSamkit from "~/assets/Images/testimonials/samkit-jain.webp";
 import avatarJijo from "~/assets/Images/testimonials/jijo-bose.webp";
 
-const RESUME_LINK: string = "https://drive.google.com/file/d/1t-2hyY0l3piAGhSDD7A6GSoew8whmM-F/view?usp=sharing";
+const RESUME_LINK: string =
+  "https://drive.google.com/file/d/1IAxitGeWlRsdDkRqzevuF67Q5zp3Ta3g/view?usp=sharing";
 
 const getYearsOfExperience = (careerStartDate: string | Date) => {
   const currentDate = new Date();
@@ -180,6 +181,15 @@ const Pages: LinkObj[] = [
 
 const WorkExperiences: WorkExperienceObj[] = [
   {
+    years: "Jul 2024 - Jul 2024",
+    title: "Freelance Software Developer",
+    company: "Remote",
+    contributions: [
+      "Built a fully responsive website using Next.js and delivered it before the deadline.",
+      "Integrated Google Analytics and HubSpot for traffic tracking and lead capture.",
+    ],
+  },
+  {
     years: "Sep 2022 - Mar 2024",
     title: "Software Engineer",
     company: "Saeloun Technologies Pvt. Ltd (Remote)",
@@ -212,15 +222,19 @@ const WorkExperiences: WorkExperienceObj[] = [
       "Contributed to implementing Single-Sign-On(SSO). Wrote functional, unit, and integration tests for application quality assurance.",
     ],
   },
+  {
+    years: "Dec 2019 - Oct 2020",
+    title: "Full Stack Development (MERN)",
+    company: "AltCampus",
+    contributions: [
+      "Developed several full-stack(MERN) web applications.",
+      "Took some classes and doubt-clearing sessions on JavaScript, React.js, and Node.js",
+      "Contributed to internal CMS projects.",
+    ],
+  },
 ];
 
 const EducationDetails: EducationObj[] = [
-  {
-    title: "Full Stack Development (MERN)",
-    institute: "AltCampus",
-    address: "Thehr, Khaniyara Valley, Dharamshala, Himachal Pradesh, India",
-    years: "2019 - 2020",
-  },
   {
     title: "Bachelor of Science (B.Sc) in Computer Science (Hons.)",
     institute: "Triveni Devi Bhalotia College",
@@ -392,15 +406,15 @@ export const Config: IConfig = {
     site_name: "Sanjib Roy",
     twitter_handle: "@sanjibroy360",
     description: `Experienced Full Stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with ${
-      +getYearsOfExperience("2021-02-10") || "less than 1"
+      +getYearsOfExperience("2019-12-07") || "less than 1"
     } ${
-      +getYearsOfExperience("2021-02-10") > 1 ? "years" : "year"
-    } of remote work. Portfolio website shared my blogs, projects, journey`,
+      +getYearsOfExperience("2019-12-07") > 1 ? "years" : "year"
+    } of experience. Portfolio website shared my blogs, projects, journey`,
     long_description: `Hi, I am Sanjib Roy, a Software Developer with ${
-      +getYearsOfExperience("2021-02-10") || "less than 1"
+      +getYearsOfExperience("2019-12-07") || "less than 1"
     } ${
-      +getYearsOfExperience("2021-02-10") > 1 ? "years" : "year"
-    } of remote work experience, proficient in JavaScript React.js Next.js Node.js TypeScript Electron.js MongoDB, Ruby Ruby on Rails, and PostgreSQL. I completed my Bachelor of Science in Computer Science (Honours) in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.`,
+      +getYearsOfExperience("2019-12-07") > 1 ? "years" : "year"
+    } of experience, proficient in JavaScript React.js Next.js Node.js TypeScript Electron.js MongoDB, Ruby Ruby on Rails, and PostgreSQL. I completed my Bachelor of Science in Computer Science (Honours) in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.`,
     keywords:
       "sanjib, sanjib roy, sanjibroy360, fullstack developer, mern stack developer, software developer, software engineer, frontend developer, portfolio, web developer, react developers, rails developer, javascript, sanjib roy official website, sanjib roy portfolio website, raniganj sanjib, west bengal sanjib, sanjib-roy",
   },
@@ -409,8 +423,8 @@ export const Config: IConfig = {
     name: "Sanjib Roy",
     about: AboutMe,
     job: "Full-stack engineer",
-    started: "2021-02-10", // Used to calculate years of experience dynamically
-    yearsOfExperience: getYearsOfExperience("2021-02-10"),
+    started: "2019-12-07", // Used to calculate years of experience dynamically
+    yearsOfExperience: getYearsOfExperience("2019-12-07"),
     stack: "MERN stack and Ruby on Rails",
     hobby: "gamble my life savings",
     projectLink: "/projects",
