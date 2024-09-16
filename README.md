@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Hey there! Welcome to my portfolio website repository. I'm Sanjib Roy, an **Experienced Full Stack Software Developer** skilled in **JavaScript**, **React.js**, **Next.js**, **Node.js**, **TypeScript**, **Electron.js**, **MongoDB**, **Ruby**, **Ruby on Rails**, and **PostgreSQL**, with over **3 years of remote work experience**. This portfolio is my digital space to share my **blogs**, **projects**, and my evolving journey through the fascinating world of **software development**.
+Hey there! Welcome to my portfolio website repository. I'm Sanjib Roy, an **Experienced Full Stack Software Developer** skilled in **JavaScript**, **React.js**, **Next.js**, **Node.js**, **TypeScript**, **Electron.js**, **MongoDB**, **Ruby**, **Ruby on Rails**, and **PostgreSQL**, with over **4 years of remote work experience**. This portfolio is my digital space to share my **blogs**, **projects**, and my evolving journey through the fascinating world of **software development**.
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/10743dcd-2b00-4ac4-ba4e-22d3c31a07ad/deploy-status)](https://app.netlify.com/sites/sanjib-roy/deploys)
