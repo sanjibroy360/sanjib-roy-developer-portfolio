@@ -181,7 +181,7 @@ const Pages: LinkObj[] = [
 
 const WorkExperiences: WorkExperienceObj[] = [
   {
-    years: "Jul 2024 - Jul 2024",
+    years: "Jul 2024 - Present",
     title: "Freelance Software Developer",
     company: "Remote",
     contributions: [
