@@ -6,7 +6,7 @@ import Testimonials from "~/components/Testimonials/index.astro";
 import SubHeading from "~/components/common/SubHeading.astro";
 import { Config } from "~/config";
 
-const yearsOfExperienceString = `${Config.me.yearsOfExperience || "less than 1"} ${+Config.me.yearsOfExperience > 1 ? "years" : "year"}`;
+const yearsOfExperienceString = `${Config.me.yearsOfExperience || "less than 1"}+ ${+Config.me.yearsOfExperience > 1 ? "years" : "year"}`;
 ---
 
 <Layout title={`Profile | ${Config.me.name}`}>
@@ -21,7 +21,7 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || "less than 1"}
       <em
         class="text-secondary block not-italic md:text-base text-sm font-normal leading-normal"
       >
-        Hi, I am Sanjib Roy, a Software Developer with {yearsOfExperienceString}
+        Hi, I am Sanjib Roy, a Software Developer with overall {yearsOfExperienceString}
         of experience, proficient in <strong>
           JavaScript</strong
         >,<strong> React.js</strong>,<strong> Next.js</strong>,<strong>

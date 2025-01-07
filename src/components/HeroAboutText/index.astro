@@ -3,7 +3,7 @@ import avatarImage from "~/assets/Images/avatar.webp";
 // import "./styles.css";
 import {Config} from "~/config"
 
-const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'} ${+Config.me.yearsOfExperience > 1 ? 'years' : 'year'}`;
+const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}+ ${+Config.me.yearsOfExperience > 1 ? 'years' : 'year'}`;
 ---
 
 <article>
@@ -31,7 +31,7 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
           {+Config.me.yearsOfExperience > 0 && (
             <li class="text-primary-light text-sm md:text-base" class="text-sm md:text-base">
               <em class="not-italic">
-                Software engineer, with {yearsOfExperienceString} of experience.
+                Software engineer, with overall {yearsOfExperienceString} of experience.
               </em>
             </li>
           )}

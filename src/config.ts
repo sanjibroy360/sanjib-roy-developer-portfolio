@@ -2,11 +2,11 @@
 import avatarSamkit from "~/assets/Images/testimonials/samkit-jain.webp";
 import avatarJijo from "~/assets/Images/testimonials/jijo-bose.webp";
 
-const RESUME_LINK: string =
-  "https://drive.google.com/file/d/1IAxitGeWlRsdDkRqzevuF67Q5zp3Ta3g/view?usp=sharing";
+const RESUME_LINK: string = "https://drive.google.com/file/d/1PZ_hSUI-kSerfGosDmaeNf1Hm3f-CXOZ/view?usp=drive_link";
 
 const getYearsOfExperience = (careerStartDate: string | Date) => {
   const currentDate = new Date();
+  const bootcampExperience: number = 1;
 
   if ((typeof careerStartDate)?.toLowerCase()?.trim() === "string") {
     careerStartDate = new Date(careerStartDate);
@@ -26,7 +26,7 @@ const getYearsOfExperience = (careerStartDate: string | Date) => {
       // Subtract one year if the current date is before the starting date in the same year
       yearsOfExperience -= 1;
     }
-    return yearsOfExperience;
+    return yearsOfExperience + bootcampExperience;
   }
   return "";
 };
@@ -405,15 +405,15 @@ export const Config: IConfig = {
     author: "Sanjib Roy",
     site_name: "Sanjib Roy",
     twitter_handle: "@sanjibroy360",
-    description: `Experienced Full Stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with ${
-      +getYearsOfExperience("2019-12-07") || "less than 1"
-    } ${
-      +getYearsOfExperience("2019-12-07") > 1 ? "years" : "year"
+    description: `Experienced Full Stack Software Developer skilled in MERN stack, Next.js, Ruby on Rails, with overall ${
+      +getYearsOfExperience("2021-02-01") || "less than 1"
+    }+ ${
+      +getYearsOfExperience("2021-02-01") > 1 ? "years" : "year"
     } of experience. Portfolio website shared my blogs, projects, journey`,
-    long_description: `Hi, I am Sanjib Roy, a Software Developer with ${
-      +getYearsOfExperience("2019-12-07") || "less than 1"
-    } ${
-      +getYearsOfExperience("2019-12-07") > 1 ? "years" : "year"
+    long_description: `Hi, I am Sanjib Roy, a Software Developer with overall ${
+      +getYearsOfExperience("2021-02-01") || "less than 1"
+    }+ ${
+      +getYearsOfExperience("2021-02-01") > 1 ? "years" : "year"
     } of experience, proficient in JavaScript React.js Next.js Node.js TypeScript Electron.js MongoDB, Ruby Ruby on Rails, and PostgreSQL. I completed my Bachelor of Science in Computer Science (Honours) in 2019. Throughout my career, I have led a couple of teams in developing applications from scratch, managed a couple of projects single-handedly and I love taking on challenging projects that will push me to learn and grow.`,
     keywords:
       "sanjib, sanjib roy, sanjibroy360, fullstack developer, mern stack developer, software developer, software engineer, frontend developer, portfolio, web developer, react developers, rails developer, javascript, sanjib roy official website, sanjib roy portfolio website, raniganj sanjib, west bengal sanjib, sanjib-roy",
@@ -423,8 +423,8 @@ export const Config: IConfig = {
     name: "Sanjib Roy",
     about: AboutMe,
     job: "Full-stack engineer",
-    started: "2019-12-07", // Used to calculate years of experience dynamically
-    yearsOfExperience: getYearsOfExperience("2019-12-07"),
+    started: "2021-02-01", // Used to calculate years of experience dynamically
+    yearsOfExperience: getYearsOfExperience("2021-02-01"),
     stack: "MERN stack and Ruby on Rails",
     hobby: "gamble my life savings",
     projectLink: "/projects",
