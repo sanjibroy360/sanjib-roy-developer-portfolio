@@ -7,6 +7,8 @@ function MobileNavDrawer({ currentPath }: Iprops) {
       <div className="text-sm fixed left-0 bottom-0 p-2 rounded-full w-full md:hidden z-30 text-center flex items-center justify-center">
         <button
           id="mobile-nav-menu-btn"
+          type="button"
+          aria-label="Open navigation menu"
           className="w-full !py-[12px] shadow-mobile-nav-btn-shadow backdrop-blur-md relative z-40 flex items-center justify-center px-2 rounded-lg cursor-pointer group text-sm text-gray-900  border min-h-[28px] border-mobile-nav-btn-border hover:scale-[0.98] bg-mobile-nav-btn duration-100"
         >
           <div className="flex items-center text-mobile-nav-btn-content">
@@ -29,9 +31,11 @@ function MobileNavDrawer({ currentPath }: Iprops) {
             <div className="absolute top-[-50px] right-[10px] z-20">
               <button
                 id="mobile-close-nav-pane-btn"
+                type="button"
+                aria-label="Close navigation menu"
                 className="hidden w-full !py-2 relative flex items-center justify-center px-2 rounded-lg cursor-pointer group text-sm shadow-sm border border-mobile-nav-btn-border min-h-[28px]  hover:scale-[0.98] bg-white dark:bg-base-100 text-mobile-nav-btn-content duration-100"
               >
-                <X size={16} />
+                <X size={16} aria-hidden="true" />
               </button>
             </div>
             <NavLinks
