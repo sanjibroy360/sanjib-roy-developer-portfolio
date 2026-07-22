@@ -16,6 +16,9 @@ const prettyCodeOptions = {
 export default defineConfig({
   site: "https://sanjibroy.com",
   trailingSlash: "never",
+  build: {
+    format: "file", // emits profile.html instead of profile/index.html
+  },
   markdown: {
     syntaxHighlight: false,
     rehypePlugins: [
