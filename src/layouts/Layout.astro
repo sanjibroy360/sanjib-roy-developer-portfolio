@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { getImage } from "astro:assets";
 import { Config } from "~/config";
 import Header from '~/components/Header';
 import Footer from '~/components/Footer.astro';
@@ -38,6 +39,15 @@ const currentPath =
   Astro.url.pathname.replace(/\.html$/i, "").replace(/\/+$/, "") || "/";
 const canonicalURL = new URL(currentPath, Astro.site).href;
 const isHomePage = currentPath === "/";
+const mobileAvatar = isHomePage
+  ? await getImage({
+      src: avatarImage,
+      width: 192,
+      height: 192,
+      format: "webp",
+      quality: 90,
+    })
+  : null;
 ---
 
 <!doctype html>
@@ -101,13 +111,24 @@ const isHomePage = currentPath === "/";
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title={title} href="/rss.xml"/>
-    {isHomePage && (
-      <link
-        rel="preload"
-        as="image"
-        href={avatarImage.src}
-        fetchpriority="high"
-      />
+    {isHomePage && mobileAvatar && (
+      <>
+        <link
+          rel="preload"
+          as="image"
+          href={mobileAvatar.src}
+          type="image/webp"
+          media="(max-width: 767px)"
+          fetchpriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={avatarImage.src}
+          media="(min-width: 768px)"
+          fetchpriority="high"
+        />
+      </>
     )}
     <ClientRouter />
 
