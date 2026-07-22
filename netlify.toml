@@ -1,3 +1,6 @@
 [build]
   publish = "dist"
-  command = "yarn add sharp && yarn run build"
+  command = "yarn add sharp --ignore-engines && yarn build"
+
+[build.environment]
+  NODE_VERSION = "20"
