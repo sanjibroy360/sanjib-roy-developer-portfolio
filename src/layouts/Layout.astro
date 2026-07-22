@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { Config } from "~/config";
 import Header from '~/components/Header';
 import Footer from '~/components/Footer.astro';
@@ -93,7 +93,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title={title} href="/rss.xml"/>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
 
 

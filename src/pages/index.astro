@@ -45,7 +45,7 @@ const blogs = (await getCollection("posts")).sort(function (
                   day: "numeric",
                 })}
                 description={post.data.description}
-                href={"/blogs/" + post.slug}
+                href={"/blogs/" + post.id}
               />
             ))
           }

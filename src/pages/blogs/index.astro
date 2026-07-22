@@ -20,7 +20,7 @@ const posts = (await getCollection("posts")).sort(
           publishedOn={post.data.publishedOn}
           summary={post.data.summary}
           tags = {post.data.tags}
-          href={post.slug}
+          href={post.id}
         />
       ))
     }
