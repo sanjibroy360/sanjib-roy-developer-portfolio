@@ -14,7 +14,7 @@ export const GET = async () => {
       data: {
         ...post.data,
         type: "Blog",
-        link: `/blogs/${post.slug}/`,
+        link: `/blogs/${post.id}/`,
         categories: post.data.tags,
       },
     }));

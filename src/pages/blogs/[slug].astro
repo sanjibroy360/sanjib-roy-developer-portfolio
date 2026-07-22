@@ -1,13 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
-import {Config} from "~/config.ts";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { Config } from "~/config.ts";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
 
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
@@ -22,8 +22,8 @@ const formattedPublishedAtDate = new Date(post.data.publishedOn).toLocaleDateStr
     month: "long",
     day: "numeric",
   }
-);           
-const { Content } = await post.render();
+);
+const { Content } = await render(post);
 ---
 
 <Layout
@@ -36,7 +36,7 @@ const { Content } = await post.render();
   og_title={post.data.title}
   og_description={post.data.summary}
   og_type="article"
-  og_image={`${Config.website}/og/blogs/${post.slug}.png`}
+  og_image={`${Config.website}/og/blogs/${post.id}.png`}
 >
   <main class="lg:my-32 mt-10 mb-12">
     <article class="pt-8 pb-14 md:px-2 md:pt-6 min-h-screen blog-wrapper prose lg:m-0 mx-auto flex w-full lg:max-w-full max-w-prose flex-col">
@@ -44,7 +44,7 @@ const { Content } = await post.render();
         {post.data.title}
       </h1>
       <p class="mt-8 mb-0 p-0 text-sm mb-1 tracking-wide">
-        Author: <a class="no-underline font-medium" href='/' rel="noopener noreferrer nofollow" area-label={`Author name is ${post.data.author}`} role="contentinfo">{post.data.author}</span>
+        Author: <a class="no-underline font-medium" href='/' rel="noopener noreferrer nofollow" area-label={`Author name is ${post.data.author}`} role="contentinfo">{post.data.author}</a>
       </p>
       <p class="mt-0 mb-2 p-0 pb-3 text-sm border-b border-section-divider">
         Published on: <span class="font-medium" area-label={`This article was published on ${formattedPublishedAtDate}`} role="contentinfo">{formattedPublishedAtDate}</span>

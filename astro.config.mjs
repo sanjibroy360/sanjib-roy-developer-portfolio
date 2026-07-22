@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
-import { astroImageTools } from "astro-imagetools";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -16,9 +15,8 @@ const prettyCodeOptions = {
 
 export default defineConfig({
   site: "https://sanjibroy.com",
-  trailingSlash: "always",
+  trailingSlash: "never",
   markdown: {
-    extendDefaultPlugins: true,
     syntaxHighlight: false,
     rehypePlugins: [
       [rehypePrettyCode, prettyCodeOptions],
@@ -57,10 +55,9 @@ export default defineConfig({
         },
       ],
     }),
-    astroImageTools,
     partytown({
       config: {
-        forward: ["dataLayer.push"],
+        forward: ["dataLayer.push", "gtag"],
       },
     }),
     sitemap({

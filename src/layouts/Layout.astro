@@ -1,10 +1,11 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { Config } from "~/config";
 import Header from '~/components/Header';
 import Footer from '~/components/Footer.astro';
 import ThemeToggler from "~/components/ThemeToggler"
 import '~/styles/global.css';
+import avatarImage from "~/assets/Images/avatar.webp";
 
 
 interface Props {
@@ -33,25 +34,12 @@ const {
 
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
+const isHomePage = currentPath === "/" || currentPath === "";
 ---
 
 <!doctype html>
 <html class="bg-base-100 text-base-content overflow-y-scroll" lang="en">
   <head>
-    <!-- Google tag (gtag.js) for Google analytics -->
-    <script is:inline  src="https://www.googletagmanager.com/gtag/js?id=G-R1525FDSWP">
-    </script>
-
-    <script is:inline >
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-R1525FDSWP");
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -93,7 +81,26 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title={title} href="/rss.xml"/>
-    <ViewTransitions />
+    {isHomePage && (
+      <link
+        rel="preload"
+        as="image"
+        href={avatarImage.src}
+        fetchpriority="high"
+      />
+    )}
+    <ClientRouter />
+
+    <!-- Analytics via Partytown (off main thread, non-blocking) -->
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-R1525FDSWP"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-R1525FDSWP");
+    </script>
   </head>
 
 

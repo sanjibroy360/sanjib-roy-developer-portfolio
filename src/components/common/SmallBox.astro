@@ -18,7 +18,7 @@ const { title, publishedOn,about, description, href, tags, showTags, classNames,
   href={href}
   target={href.startsWith("http") ? "_blank" : "_self"}
   rel="noopener noreferrer nofollow"
-  area-label={title}
+  aria-label={title}
   class="group flex md:justify-center  cursor-pointer flex-col gap-2 rounded-md border p-4 transition-all duration-300 hover:-translate-y-1.5 shadow-card-box-shadow border-light-border h-full"
   data-astro-prefetch
 >
