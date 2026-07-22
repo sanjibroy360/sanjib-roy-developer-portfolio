@@ -32,9 +32,12 @@ const {
   keywords= Config.app.keywords,
 } = Astro.props;
 
-const currentPath = Astro.url.pathname;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
-const isHomePage = currentPath === "/" || currentPath === "";
+// build.format: "file" can leave ".html" on the pathname at build time — strip it
+// so the public URL and canonical always match (no trailing slash except root).
+const currentPath =
+  Astro.url.pathname.replace(/\.html$/i, "").replace(/\/+$/, "") || "/";
+const canonicalURL = new URL(currentPath, Astro.site).href;
+const isHomePage = currentPath === "/";
 ---
 
 <!doctype html>
@@ -52,7 +55,7 @@ const isHomePage = currentPath === "/" || currentPath === "";
     <meta property="og:description" content={og_description} />
     <meta property="og:type" content={og_type} />
     <meta property="og:image" content={og_image} />
-    <meta property="og:url" content={Astro.request.url} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content={Config.app.site_name} />
     <meta property="og:image:alt" content={og_title} />
 
