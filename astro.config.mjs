@@ -16,7 +16,7 @@ const prettyCodeOptions = {
 
 export default defineConfig({
   site: "https://sanjibroy.com",
-  trailingSlash: "never",
+  trailingSlash: "always",
   markdown: {
     extendDefaultPlugins: true,
     syntaxHighlight: false,
