@@ -2,11 +2,13 @@
 import avatarSamkit from "~/assets/Images/testimonials/samkit-jain.webp";
 import avatarJijo from "~/assets/Images/testimonials/jijo-bose.webp";
 
-const RESUME_LINK: string = "https://drive.google.com/file/d/1PZ_hSUI-kSerfGosDmaeNf1Hm3f-CXOZ/view?usp=drive_link";
+const RESUME_LINK: string =
+  "https://drive.google.com/file/d/1DKv6UiCTOM3fBX2XHf4XFfjSxuF8Uzwc/view?usp=sharing";
 
 const getYearsOfExperience = (careerStartDate: string | Date) => {
   const currentDate = new Date();
   const bootcampExperience: number = 1;
+  const gapYearExperience: number = 1.2;
 
   if ((typeof careerStartDate)?.toLowerCase()?.trim() === "string") {
     careerStartDate = new Date(careerStartDate);
@@ -26,7 +28,9 @@ const getYearsOfExperience = (careerStartDate: string | Date) => {
       // Subtract one year if the current date is before the starting date in the same year
       yearsOfExperience -= 1;
     }
-    return yearsOfExperience + bootcampExperience;
+    return Math.floor(
+      yearsOfExperience + bootcampExperience - gapYearExperience,
+    );
   }
   return "";
 };
@@ -187,6 +191,15 @@ const WorkExperiences: WorkExperienceObj[] = [
     contributions: [
       "Built a fully responsive website using Next.js and delivered it before the deadline.",
       "Integrated Google Analytics and HubSpot for traffic tracking and lead capture.",
+      "Contributed to building the PriceLabs mobile application from scratch using React Native, Expo, and React Native WebView, helping bring one of the leading revenue management platforms for 500,000+ properties worldwide to mobile.",
+      "Built and enhanced core product areas including the Pricing Dashboard, Review Prices, Notes, Event Feedback, and Onboarding while maintaining feature parity with the web platform.",
+      "Led the development of the end-to-end mobile onboarding experience, implementing language selection, personalization, property onboarding, and listing connection workflows.",
+      "Replaced 150+ web components with reusable, mobile-optimized React Native components to improve performance, maintainability, and user experience.",
+      "Implemented deep-link based OAuth authentication and listing integration flows for Airbnb, Booking.com, Vrbo, Hostaway, and other PMS providers.",
+      "Developed mobile-specific APIs and Next.js functionality to support onboarding, integrations, authentication, deep-linking, and application workflows.",
+      "Designed and implemented deep-linking across the React Native app and Next.js platform, collaborating with backend engineers to improve authentication and redirection flows.",
+      "Implemented application-wide reliability features including error boundaries, offline connectivity handling, pull-to-refresh, update recommendation flows, and Android navigation improvements.",
+      "Investigated and resolved production issues across Ruby on Rails applications, including Sidekiq background job failures, API issues, and third-party integration errors, improving overall platform reliability.",
     ],
   },
   {
@@ -328,9 +341,22 @@ const Testimonials: TestimonialsObj[] = [
 
 const Projects: ProjectObj[] = [
   {
+    appName: "PriceLabs Mobile App",
+    url: "https://hello.pricelabs.co/mobile-app/",
+    about:
+      "Mobile companion app for the PriceLabs platform, which powers dynamic pricing for 600K+ listings across 150+ countries. Built to help hosts and property managers monitor pricing, manage listings, and make quick revenue management decisions from anywhere.",
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Next.js",
+      "Ruby on Rails",
+    ],
+  },
+  {
     appName: "Miru",
     url: "https://www.miru.so/",
-    about: "Time Tracking, Invoicing, Employee management platform ",
+    about: "Open-source time tracking, invoicing, employee management, expense management, and reporting platform for agencies, consultants, and service businesses. Helps teams track billable hours, manage clients and projects, generate invoices, and get paid from a single application.",
     tags: ["React.js", "TailwindCSS", "Ruby on Rails", "PostgreSQL"],
   },
   {
