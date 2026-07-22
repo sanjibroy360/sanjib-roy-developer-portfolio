@@ -341,14 +341,14 @@ const Testimonials: TestimonialsObj[] = [
 
 const Projects: ProjectObj[] = [
   {
-    appName: "PriceLabs Mobile App",
+    appName: "PriceLabs App",
     url: "https://hello.pricelabs.co/mobile-app/",
     about:
-      "Mobile companion app for the PriceLabs platform, which powers dynamic pricing for 600K+ listings across 150+ countries. Built to help hosts and property managers monitor pricing, manage listings, and make quick revenue management decisions from anywhere.",
+      "PriceLabs mobile app for managing 600K+ properties across 150+ countries.",
     tags: [
       "React Native",
-      "Expo",
       "TypeScript",
+      "Expo",
       "Next.js",
       "Ruby on Rails",
     ],
@@ -356,7 +356,7 @@ const Projects: ProjectObj[] = [
   {
     appName: "Miru",
     url: "https://www.miru.so/",
-    about: "Open-source time tracking, invoicing, employee management, expense management, and reporting platform for agencies, consultants, and service businesses. Helps teams track billable hours, manage clients and projects, generate invoices, and get paid from a single application.",
+    about: "Time Tracking, Invoicing, Employee management platform ",
     tags: ["React.js", "TailwindCSS", "Ruby on Rails", "PostgreSQL"],
   },
   {
