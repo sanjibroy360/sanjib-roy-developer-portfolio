@@ -18,6 +18,7 @@ export default defineConfig({
   trailingSlash: "never",
   build: {
     format: "file", // emits profile.html instead of profile/index.html
+    inlineStylesheets: "always", // avoid render-blocking /_astro/*.css request
   },
   markdown: {
     syntaxHighlight: false,

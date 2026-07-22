@@ -72,11 +72,21 @@ const isHomePage = currentPath === "/";
     <link rel="canonical" href={canonicalURL} />
     <link rel="apple-touch-icon" href="/touch-icons/main-icon.png">
     <link rel="icon" type="image/png" href='/icon.png' />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link
-      rel="stylesheet"
-      media="print" 
-      onload="this.media='all'"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
+      rel="preload"
+      href="/fonts/IBMPlexSans-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Inter-Medium.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
     />
 
     <!-- Sitemap -->

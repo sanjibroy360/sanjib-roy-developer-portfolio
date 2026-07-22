@@ -1,6 +1,5 @@
 ---
 import avatarImage from "~/assets/Images/avatar.webp";
-// import "./styles.css";
 import {Config} from "~/config"
 
 const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}+ ${+Config.me.yearsOfExperience > 1 ? 'years' : 'year'}`;
@@ -28,9 +27,9 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
         <em class="font-inter font-bold not-italic text-primary opacity-100">Sanjib Roy!</em>
       </h1>
       <div>
-        <ul class="!mb-0 text-primary-light font-thin list-disc pl-4 space-y-1 md:space-y-[6px]">
+        <ul class="!mb-0 text-primary-light font-normal list-disc pl-4 space-y-1 md:space-y-[6px]">
           {+Config.me.yearsOfExperience > 0 && (
-            <li class="text-primary-light text-sm md:text-base" class="text-sm md:text-base">
+            <li class="text-primary-light text-sm md:text-base">
               <em class="not-italic">
                 Software engineer, with overall {yearsOfExperienceString} of experience.
               </em>
@@ -105,16 +104,16 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
             href={Config.me.resumeLink}
             rel="noopener noreferrer nofollow"
             target="_blank"
-            class="md:hidden inline-block md:basis-1/3 basis-1/2 p-2 !font-inter font-bold text-sm bg-blue-btn opacity-90 border-2 border-blue-btn hover:opacity-100 text-white capitalize rounded-full md:rounded-lg text-center"
+            class="md:hidden inline-block md:basis-1/3 basis-1/2 p-2 !font-inter font-bold text-sm bg-blue-btn opacity-90 border-2 border-blue-btn hover:opacity-100 text-white capitalize rounded-full md:rounded-lg text-center min-h-11"
           >
-            <button>Download Resume</button>
+            Download Resume
           </a>
           <a
             href='/profile'
             rel="noopener noreferrer nofollow"
-            class="md:hidden inline-block basis-1/2 p-2 !font-inter font-bold text-sm bg-app text-blue-btn border-2 border-blue-btn capitalize rounded-full text-center"
+            class="md:hidden inline-block basis-1/2 p-2 !font-inter font-bold text-sm bg-app text-blue-btn border-2 border-blue-btn capitalize rounded-full text-center min-h-11"
           >
-            <button>View Profile</button>
+            View Profile
           </a>
         </div>
       </div>
@@ -122,8 +121,8 @@ const yearsOfExperienceString = `${Config.me.yearsOfExperience || 'less than 1'}
 
     <div class="md:block hidden">
       <img
-        height="192px"
-        width="192px"
+        height="192"
+        width="192"
         class="h-48 w-48 object-cover bg-orange-100 rounded-full"
         src={avatarImage.src}
         alt="Avatar image"

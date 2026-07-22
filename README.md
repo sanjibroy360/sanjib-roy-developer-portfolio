@@ -7,7 +7,7 @@ Hey there! Welcome to my portfolio website repository. I'm Sanjib Roy, an **Expe
 
 ## 🛠️ Technologies used
 
-- ⚡️ Astro.js (^4.10.1)
+- ⚡️ Astro.js (^5.18.2)
 - 🔥 React.js
 - 🎨 Tailwind CSS
 - 🔍 TypeScript

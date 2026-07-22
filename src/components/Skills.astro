@@ -4,6 +4,20 @@ import StackCard from "~/components/common/StackCard.astro";
 import SubHeading from "~/components/common/SubHeading.astro";
 ---
 
+<!-- Load Devicon only where Skills render; defer so it does not block LCP -->
+<link
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
+  />
+</noscript>
+
 <section class="block">
   <div class="flex flex-col gap-8" id="skills">
     <SubHeading text="Skills" />
