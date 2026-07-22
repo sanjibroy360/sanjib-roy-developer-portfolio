@@ -32,7 +32,8 @@ const {
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString();
+const slash = '/';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)?.toString() + slash;
 ---
 
 <!doctype html>
