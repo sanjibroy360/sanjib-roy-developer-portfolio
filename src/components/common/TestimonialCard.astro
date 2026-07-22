@@ -1,13 +1,16 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
-  avatar:any;
+  avatar: ImageMetadata;
   role: string;
   name: string;
   message: string;
   link: string;
 }
 
-const { avatar, name, message, link, role } = Astro.props
+const { avatar, name, message, link, role } = Astro.props;
 ---
 
 <a
@@ -20,14 +23,15 @@ const { avatar, name, message, link, role } = Astro.props
 >
   <div class="flex flex-row w-full justify-between gap-4 items-start">
     <div class="flex items-center gap-x-3">
-      <img
-        height="48"
-        width="48"
+      <Image
+        height={96}
+        width={96}
         class="h-12 w-12 object-cover bg-orange-100 rounded-full block"
         src={avatar}
         alt={`${name}'s photo | Testimonial`}
         loading="lazy"
         decoding="async"
+        quality={80}
       />
       <div>
         <h3 class="text-sm md:text-base text-primary font-medium">{name}</h3>

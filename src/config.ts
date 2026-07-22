@@ -321,7 +321,7 @@ const Skills: SkillObj[] = [
 
 const Testimonials: TestimonialsObj[] = [
   {
-    avatar: avatarJijo.src,
+    avatar: avatarJijo,
     role: "Senior Software Developer at Saeloun",
     name: "Jijo Bose",
     message: `I have worked with Sanjib to build a desktop app built using ElectronJS. 
@@ -330,7 +330,7 @@ const Testimonials: TestimonialsObj[] = [
     link: "https://www.linkedin.com/in/sanjibroy360/details/recommendations",
   },
   {
-    avatar: avatarSamkit.src,
+    avatar: avatarSamkit,
     role: "Principal Engineer at Juvoxa",
     name: "Samkit Jain",
     message:
